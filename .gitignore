@@ -1,0 +1,39 @@
+# Virtual environments
+venv/
+.env/
+*.env
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Data
+data/
+datasets/
+*.json
+*.jsonl
+*.csv
+*.zip
+*.tar
+*.gz
+
+# Checkpoints, embeddings, models
+models/
+checkpoints/
+*.bin
+*.h5
+*.pt
+*.pth
+*.ckpt
+
+# Chroma DB local storage
+chroma/
+chroma_db/
+*.db
+*.sqlite
+
+# System
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/

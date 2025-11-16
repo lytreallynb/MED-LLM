@@ -1,0 +1,14 @@
+requests==2.32.3
+tqdm==4.66.1
+
+ujson==5.10.0
+numpy==1.26.4
+
+sentence-transformers==2.5.1
+transformers==4.44.0
+tokenizers==0.19.1
+
+chromadb==0.5.4
+
+pydantic==2.8.2
+pdfminer.six==20240706
