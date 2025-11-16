@@ -1,0 +1,131 @@
+Med-LLM Git Collaboration Guidelines
+------------------------------------
+
+1. Branch Structure
+-------------------
+main        - stable, production-ready code. No direct commits.
+dev         - integration branch where all features are merged.
+feature/*   - branches for new features, bug fixes, or experiments.
+
+2. Starting New Work
+--------------------
+Always update dev first:
+
+    git checkout dev
+    git pull origin dev
+
+Create a new feature branch:
+
+    git checkout -b feature/<task-name>
+
+Example:
+
+    git checkout -b feature/fda-parser
+    git checkout -b feature/rag-indexing
+
+Work normally, then commit:
+
+    git add .
+    git commit -m "Implement XYZ"
+
+3. Keeping Your Branch Updated
+------------------------------
+Before pushing or opening a PR:
+
+    git checkout feature/<task>
+    git pull origin dev --rebase
+
+This ensures your branch stays compatible with the latest dev branch.
+
+4. Pull Request Workflow
+------------------------
+When ready to merge:
+
+1. Push your feature branch
+       git push -u origin feature/<task>
+
+2. Open a Pull Request into the dev branch
+3. Request review from collaborators
+4. Make required changes
+5. Reviewer merges into dev
+
+Merging dev into main happens only after a review and when the code is stable.
+
+5. No Large Files Policy
+------------------------
+Do not commit:
+- data/ folder
+- venv/ folder
+- model weights (bin, pth, pt)
+- chroma index files
+- JSON/ZIP files larger than a few MB
+- compiled binaries (.dylib, .so)
+- HuggingFace cache
+- __pycache__/
+
+All such paths must be included in .gitignore.
+
+If a large file is accidentally committed, do not push. Inform the team immediately.
+
+6. Data Handling
+----------------
+Data should not be stored in Git. Use one of the following:
+- GitHub Releases
+- HuggingFace Datasets
+- Google Drive
+- AWS S3
+
+All collaborators should download data through scripts in the scripts/ directory.
+
+7. Commit Message Style
+-----------------------
+Use clear, concise messages:
+
+Types:
+feat      - new feature
+fix       - bug fix
+docs      - documentation changes
+refactor  - code restructuring
+test      - test additions or updates
+tooling   - build or tool configuration
+
+Examples:
+feat: add FDA label downloader
+fix: handle missing fields in JSON parser
+docs: update RAG documentation
+refactor: split embedding code into modules
+
+8. Common Git Commands
+----------------------
+Delete a local feature branch after merging:
+    git branch -d feature/<name>
+
+Delete remote feature branch:
+    git push origin --delete feature/<name>
+
+Undo last local commit:
+    git reset HEAD~1
+
+Update your feature branch with latest dev:
+    git pull origin dev --rebase
+
+9. Handling Secrets
+-------------------
+Do not commit:
+- API keys
+- credentials
+- environment variables
+
+Use a .env file and ensure it is listed in .gitignore.
+
+10. Golden Rules
+----------------
+1. Do not commit to main.
+2. Always work on a feature branch.
+3. Never commit large files or data.
+4. Always pull and rebase before pushing.
+5. Use Pull Requests for all merges.
+6. Communicate before rewriting history.
+7. Keep the repository clean and lightweight.
+
+
