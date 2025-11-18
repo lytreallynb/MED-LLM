@@ -2,86 +2,48 @@ import os
 import json
 import time
 import requests
-from tqdm import tqdm
 
-API_URL = "https://api.fda.gov/drug/label.json"
-SAVE_META_DIR = "data/meta"
-SAVE_ZIP_DIR = "data/raw"
-BATCH_SIZE = 100  # FDA allows up to 100 per request
+# Output directory
+SAVE_DIR = "data/meta"
+os.makedirs(SAVE_DIR, exist_ok=True)
 
-os.makedirs(SAVE_META_DIR, exist_ok=True)
-os.makedirs(SAVE_ZIP_DIR, exist_ok=True)
+# API config
+ENDPOINT = "https://api.fda.gov/drug/label.json"
+LIMIT = 100
+MAX_RECORDS = 50000  # customize if needed
 
-def fetch_batch(skip):
-    """Fetch a batch of drug labels from openFDA"""
-    params = {"limit": BATCH_SIZE, "skip": skip}
-
-    r = requests.get(API_URL, params=params, timeout=20)
-    if r.status_code != 200:
-        print("Error:", r.text)
-        return None
-
-    return r.json()
-
-
-def extract_download_url(record):
-    """FDA stores zipped drug SPL files at a stable path"""
-    if "id" not in record:
-        return None
-
-    doc_id = record["id"]
-    return f"https://download.open.fda.gov/flatfiles/drug/label/{doc_id}.zip"
-
-
-def download_zip(url):
-    filename = os.path.join(SAVE_ZIP_DIR, url.split("/")[-1])
-
-    if os.path.exists(filename):
-        return  # skip existing
-
-    try:
-        r = requests.get(url, timeout=20)
-        if r.status_code == 200:
-            with open(filename, "wb") as f:
-                f.write(r.content)
-        else:
-            print("Failed:", url, r.status_code)
-    except Exception as e:
-        print("Error downloading:", url, e)
-
-
-def main():
+def download_batches():
     skip = 0
-    meta_index = 0
+    batch_id = 0
+    total = 0
 
-    while True:
-        print(f"Fetching batch: skip={skip}")
+    while total < MAX_RECORDS:
+        print(f"Requesting {skip} → {skip + LIMIT}...")
 
-        data = fetch_batch(skip)
-        if not data or "results" not in data:
-            print("No more data. Done.")
+        response = requests.get(ENDPOINT, params={"limit": LIMIT, "skip": skip})
+        if response.status_code != 200:
+            print("Stopped: no more data or API error.")
             break
 
-        results = data["results"]
-        if len(results) == 0:
-            print("All done.")
+        results = response.json().get("results", [])
+        if not results:
+            print("Stopped: no more results.")
             break
 
-        # Save metadata of this batch
-        meta_path = os.path.join(SAVE_META_DIR, f"batch_{meta_index}.json")
-        with open(meta_path, "w") as f:
-            json.dump(results, f, indent=2)
+        # Save JSONL format
+        outpath = os.path.join(SAVE_DIR, f"batch_{batch_id}.json")
+        with open(outpath, "w") as f:
+            for record in results:
+                f.write(json.dumps(record) + "\n")
 
-        # Download ZIP files
-        for record in tqdm(results, desc="Downloading ZIPs"):
-            url = extract_download_url(record)
-            if url:
-                download_zip(url)
+        print(f"Saved batch_{batch_id}.json")
+        batch_id += 1
+        total += len(results)
+        skip += LIMIT
 
-        skip += BATCH_SIZE
-        meta_index += 1
-        time.sleep(0.2)  # avoid API rate limits
+        time.sleep(0.3)  # openFDA rate limit
 
+    print(f"Completed. Total records downloaded: {total}")
 
 if __name__ == "__main__":
-    main()
+    download_batches()
