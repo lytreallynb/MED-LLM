@@ -1,87 +1,93 @@
-import os
+"""Download adverse drug label records from the openFDA API in JSONL batches."""
+from __future__ import annotations
+
+import argparse
 import json
 import time
+from pathlib import Path
+
 import requests
-from tqdm import tqdm
 
-API_URL = "https://api.fda.gov/drug/label.json"
-SAVE_META_DIR = "data/meta"
-SAVE_ZIP_DIR = "data/raw"
-BATCH_SIZE = 100  # FDA allows up to 100 per request
-
-os.makedirs(SAVE_META_DIR, exist_ok=True)
-os.makedirs(SAVE_ZIP_DIR, exist_ok=True)
-
-def fetch_batch(skip):
-    """Fetch a batch of drug labels from openFDA"""
-    params = {"limit": BATCH_SIZE, "skip": skip}
-
-    r = requests.get(API_URL, params=params, timeout=20)
-    if r.status_code != 200:
-        print("Error:", r.text)
-        return None
-
-    return r.json()
+DEFAULT_ENDPOINT = "https://api.fda.gov/drug/label.json"
 
 
-def extract_download_url(record):
-    """FDA stores zipped drug SPL files at a stable path"""
-    if "id" not in record:
-        return None
+def download_batches(
+    *,
+    endpoint: str = DEFAULT_ENDPOINT,
+    save_dir: Path | str = "data/meta",
+    limit: int = 100,
+    max_records: int = 10_000,
+    delay: float = 0.25,
+) -> tuple[int, int]:
+    """Fetch paginated openFDA responses and persist them as newline-delimited JSON."""
+    if limit <= 0:
+        raise ValueError("API limit must be greater than zero")
+    if max_records <= 0:
+        raise ValueError("max_records must be greater than zero")
 
-    doc_id = record["id"]
-    return f"https://download.open.fda.gov/flatfiles/drug/label/{doc_id}.zip"
+    save_path = Path(save_dir)
+    save_path.mkdir(parents=True, exist_ok=True)
 
+    session = requests.Session()
 
-def download_zip(url):
-    filename = os.path.join(SAVE_ZIP_DIR, url.split("/")[-1])
-
-    if os.path.exists(filename):
-        return  # skip existing
-
-    try:
-        r = requests.get(url, timeout=20)
-        if r.status_code == 200:
-            with open(filename, "wb") as f:
-                f.write(r.content)
-        else:
-            print("Failed:", url, r.status_code)
-    except Exception as e:
-        print("Error downloading:", url, e)
-
-
-def main():
     skip = 0
-    meta_index = 0
+    batch_id = 0
+    total_records = 0
 
-    while True:
-        print(f"Fetching batch: skip={skip}")
+    while total_records < max_records:
+        current_limit = min(limit, max_records - total_records)
+        params = {"limit": current_limit, "skip": skip}
+        print(f"Requesting records {skip} → {skip + current_limit}...")
 
-        data = fetch_batch(skip)
-        if not data or "results" not in data:
-            print("No more data. Done.")
+        try:
+            response = session.get(endpoint, params=params, timeout=30)
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            print(f"Request failed: {exc}")
             break
 
-        results = data["results"]
-        if len(results) == 0:
-            print("All done.")
+        payload = response.json()
+        results = payload.get("results", [])
+        if not results:
+            print("Stopped: no more results returned by the API.")
             break
 
-        # Save metadata of this batch
-        meta_path = os.path.join(SAVE_META_DIR, f"batch_{meta_index}.json")
-        with open(meta_path, "w") as f:
-            json.dump(results, f, indent=2)
+        outfile = save_path / f"batch_{batch_id}.json"
+        with outfile.open("w", encoding="utf-8") as fh:
+            for record in results:
+                fh.write(json.dumps(record))
+                fh.write("\n")
 
-        # Download ZIP files
-        for record in tqdm(results, desc="Downloading ZIPs"):
-            url = extract_download_url(record)
-            if url:
-                download_zip(url)
+        print(f"Saved {outfile}")
 
-        skip += BATCH_SIZE
-        meta_index += 1
-        time.sleep(0.2)  # avoid API rate limits
+        batch_id += 1
+        downloaded = len(results)
+        total_records += downloaded
+        skip += downloaded
+
+        if delay > 0:
+            time.sleep(delay)
+
+    print(f"Completed. Batches: {batch_id} | Records: {total_records}")
+    return batch_id, total_records
+
+
+def build_parser() -> argparse.ArgumentParser:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--endpoint", default=DEFAULT_ENDPOINT, help="openFDA endpoint URL")
+    parser.add_argument("--save-dir", default="data/meta", help="Directory for the JSON batches")
+    parser.add_argument("--limit", type=int, default=100, help="Number of records per request (max 100)")
+    parser.add_argument("--max-records", type=int, default=10_000, help="Stop after downloading this many records")
+    parser.add_argument("--sleep", type=float, default=0.25, help="Delay in seconds between requests")
+    return parser
 
 
 if __name__ == "__main__":
-    main()
+    cli_args = build_parser().parse_args()
+    download_batches(
+        endpoint=cli_args.endpoint,
+        save_dir=cli_args.save_dir,
+        limit=cli_args.limit,
+        max_records=cli_args.max_records,
+        delay=cli_args.sleep,
+    )
