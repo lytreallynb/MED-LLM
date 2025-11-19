@@ -1,39 +1,38 @@
-# Virtual environments
+# Virtual environment
 venv/
-.env/
-*.env
 
 # Python cache
 __pycache__/
 *.pyc
 
-# Data
+# OS
+.DS_Store
+
+# Ignore ALL data (raw + processed)
 data/
-datasets/
+
+# Model checkpoints / vector DB
+models/
+checkpoints/
+embeddings/
+chroma/
+chroma_db/
+
+# Common large data file types
 *.json
 *.jsonl
 *.csv
+*.parquet
 *.zip
 *.tar
 *.gz
-
-# Checkpoints, embeddings, models
-models/
-checkpoints/
-*.bin
-*.h5
-*.pt
-*.pth
-*.ckpt
-
-# Chroma DB local storage
-chroma/
-chroma_db/
 *.db
 *.sqlite
+*.pt
+*.pth
+*.bin
+*.ckpt
 
-# System
-.DS_Store
-
-# Jupyter
-.ipynb_checkpoints/
+# Logs, temp
+logs/
+tmp/
