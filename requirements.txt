@@ -5,6 +5,8 @@ ujson==5.10.0
 numpy==1.26.4
 pandas==2.2.2
 pyarrow==17.0.0
+faiss-cpu==1.8.0.post1
+torch==2.4.1
 
 sentence-transformers==2.5.1
 transformers==4.44.0
@@ -14,3 +16,5 @@ chromadb==0.5.4
 
 pydantic==2.8.2
 pdfminer.six==20240706
+fastapi==0.114.2
+uvicorn==0.30.6
