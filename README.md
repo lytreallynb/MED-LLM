@@ -3,6 +3,7 @@
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Qwen](https://img.shields.io/badge/Qwen-2.5-purple.svg)](https://github.com/QwenLM/Qwen)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/Docker-ready-blue.svg)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Retrieval-Augmented Generation (RAG) pipeline for medical Q&A, powered by **Qwen** models. Ingests FDA drug label data, generates embeddings with **Qwen2.5-Embedding**, builds a FAISS vector index, and serves queries through a FastAPI backend with Qwen LLM responses.
@@ -135,12 +136,17 @@ MED-LLM/
 │   ├── chunking.py           # Text chunking (768-token windows)
 │   ├── embeddings.py         # Qwen embedding generation
 │   ├── indexer.py            # FAISS index builder
-│   ├── retrieval.py          # RAG query engine
+│   ├── retrieval.py          # RAG query engine + safety checks
 │   ├── evaluation.py         # Benchmark evaluation
+│   ├── finetune.py           # LoRA fine-tuning scaffolding
 │   └── server.py             # FastAPI endpoints
-├── data/                      # Data directory (gitignored)
-│   ├── meta/                 # Raw JSON batches
-│   └── clean/                # Processed Parquet + embeddings
+├── tests/                     # Unit tests
+│   ├── test_chunking.py
+│   ├── test_retrieval.py
+│   └── test_llm.py
+├── llm.py                     # Standalone Qwen LLM client
+├── Dockerfile                 # Container deployment
+├── docker-compose.yml         # Multi-service orchestration
 ├── Makefile                   # Pipeline automation
 ├── requirements.txt           # Dependencies
 └── README.md
@@ -186,14 +192,59 @@ The RAG engine includes:
 - **Medical disclaimers** appended to all responses
 - **Source citations** for verification
 
-## Optional: Fine-Tuning with LoRA
+## Docker Deployment
 
-The project includes scaffolding for instruction fine-tuning using LoRA adapters. **Important:** Fine-tuning targets only:
+### Using Docker Compose
+
+```bash
+# Build and run the API server
+docker-compose up -d medllm-api
+
+# Check logs
+docker-compose logs -f medllm-api
+```
+
+### Environment Variables
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `DASHSCOPE_API_KEY` | Qwen API key | Required for LLM |
+| `MEDLLM_INDEX_PATH` | Path to FAISS index | `data/clean/fda.index` |
+| `MEDLLM_TOP_K` | Number of chunks to retrieve | `4` |
+| `MEDLLM_EMBED_MODEL` | Embedding model | `Qwen/Qwen2.5-Embedding-1.8B` |
+
+## Testing
+
+```bash
+# Run all tests
+make test
+
+# Run with coverage
+make test-cov
+
+# Run specific test file
+python -m pytest tests/test_retrieval.py -v
+```
+
+## Fine-Tuning with LoRA
+
+The project includes scaffolding for instruction fine-tuning using LoRA adapters.
+
+**Important:** Fine-tuning targets ONLY:
 - Structured reasoning format
 - Safety/refusal behavior
 - Output formatting
 
 Medical facts are NOT fine-tuned - they come from RAG retrieval.
+
+### Create Sample Training Data
+
+```bash
+make finetune-samples
+# Creates data/finetune/samples.jsonl
+```
+
+### Training Data Format
 
 ```json
 {
@@ -203,7 +254,18 @@ Medical facts are NOT fine-tuned - they come from RAG retrieval.
 }
 ```
 
-Feed the curated JSONL into your preferred LoRA pipeline (e.g., Qwen + PEFT).
+### Run Fine-Tuning
+
+```bash
+python -m medllm.finetune train \
+  --train-data data/finetune/samples.jsonl \
+  --model Qwen/Qwen2.5-7B-Instruct \
+  --output-dir output/lora_medical \
+  --epochs 3 \
+  --lora-r 8
+```
+
+This uses PEFT/LoRA for parameter-efficient fine-tuning.
 
 ## License
 
