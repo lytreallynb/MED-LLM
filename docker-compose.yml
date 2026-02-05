@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  medllm-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
+      - MEDLLM_INDEX_PATH=/app/data/clean/fda.index
+      - MEDLLM_META_PATH=/app/data/clean/fda_meta.jsonl
+      - MEDLLM_TOP_K=4
+      - MEDLLM_EMBED_MODEL=Qwen/Qwen2.5-Embedding-1.8B
+    volumes:
+      # Mount data directory for pre-built index
+      - ./data:/app/data:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+
+  # Optional: GPU-enabled service for embedding generation
+  medllm-gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    profiles:
+      - gpu
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - DASHSCOPE_API_KEY=${DASHSCOPE_API_KEY}
+      - MEDLLM_DEVICE=cuda
+    volumes:
+      - ./data:/app/data
+    command: ["python", "-m", "medllm.embeddings", "--chunks", "/app/data/clean/chunks.jsonl"]

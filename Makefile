@@ -11,18 +11,21 @@ EMBEDDINGS_FILE ?= $(DATA_DIR)/clean/fda_embeddings.npy
 INDEX_FILE ?= $(DATA_DIR)/clean/fda.index
 EMBED_MODEL ?= Qwen/Qwen2.5-Embedding-1.8B
 
-.PHONY: help dirs download parquet chunk embeddings index rag pipeline clean
+.PHONY: help dirs download parquet chunk embeddings index rag pipeline clean test serve finetune-samples
 
 help:
 	@echo "Available targets:"
-	@echo "  make download   # Fetch JSON batches from openFDA"
-	@echo "  make parquet    # Convert JSON batches into Parquet"
-	@echo "  make chunk      # Tokenize medical sections into retrieval chunks"
-	@echo "  make embeddings # Generate Qwen embeddings + metadata"
-	@echo "  make index      # Build FAISS index from embeddings"
-	@echo "  make rag        # Ensure all RAG artifacts are built"
-	@echo "  make pipeline   # Run download + parquet"
-	@echo "  make clean      # Remove generated Parquet files"
+	@echo "  make download         # Fetch JSON batches from openFDA"
+	@echo "  make parquet          # Convert JSON batches into Parquet"
+	@echo "  make chunk            # Tokenize medical sections into retrieval chunks"
+	@echo "  make embeddings       # Generate Qwen embeddings + metadata"
+	@echo "  make index            # Build FAISS index from embeddings"
+	@echo "  make rag              # Ensure all RAG artifacts are built"
+	@echo "  make pipeline         # Run download + parquet"
+	@echo "  make serve            # Start FastAPI server"
+	@echo "  make test             # Run pytest tests"
+	@echo "  make finetune-samples # Create sample fine-tuning data"
+	@echo "  make clean            # Remove generated files"
 
 # Ensure directory layout exists before running scripts
 dirs:
@@ -70,6 +73,23 @@ rag: index
 # End-to-end pipeline
 pipeline: download parquet
 
-# Remove generated Parquet files so the pipeline can re-run cleanly
+# Start FastAPI server
+serve:
+	uvicorn medllm.server:app --host 0.0.0.0 --port 8000 --reload
+
+# Run tests
+test:
+	$(PYTHON) -m pytest tests/ -v
+
+# Run tests with coverage
+test-cov:
+	$(PYTHON) -m pytest tests/ -v --cov=medllm --cov-report=term-missing
+
+# Create sample fine-tuning data
+finetune-samples:
+	$(PYTHON) -m medllm.finetune create-samples --output $(DATA_DIR)/finetune/samples.jsonl
+
+# Remove generated files so the pipeline can re-run cleanly
 clean:
 	rm -rf $(DATA_DIR)/clean
+	rm -rf output/
