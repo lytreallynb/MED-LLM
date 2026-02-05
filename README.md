@@ -1,18 +1,21 @@
-# MED-LLM: Medical RAG Pipeline
+# MED-LLM: Medical RAG Pipeline with Qwen
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![Qwen](https://img.shields.io/badge/Qwen-2.5-purple.svg)](https://github.com/QwenLM/Qwen)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A production-ready Retrieval-Augmented Generation (RAG) pipeline for medical information retrieval, built on FDA drug label data. Features efficient data pipelines, vector embeddings, and a FastAPI backend.
+A Retrieval-Augmented Generation (RAG) pipeline for medical Q&A, powered by **Qwen** models. Ingests FDA drug label data, generates embeddings with **Qwen2.5-Embedding**, builds a FAISS vector index, and serves queries through a FastAPI backend with Qwen LLM responses.
 
 ## Key Features
 
-- **25x faster data processing** using PyArrow columnar format
-- **100K+ document** ingestion from openFDA API
-- **Vector search** with FAISS and Qwen embeddings
-- **Safety checks** including hallucination detection and medical disclaimers
-- **RESTful API** for integration with web/mobile clients
+- **FDA Drug Data Ingestion** - Fetches and processes drug labels from openFDA API
+- **Qwen Embeddings** - Uses Qwen2.5-Embedding-1.8B for dense vector representations
+- **FAISS Vector Search** - Fast similarity search across 100K+ documents
+- **Qwen LLM Integration** - Generates responses via DashScope API
+- **Optional Fine-Tuning** - LoRA scaffolding for safety/formatting tuning
+- **Safety Layer** - Hallucination detection and medical disclaimers
+- **FastAPI Backend** - RESTful API for web/mobile integration
 
 ## Architecture
 
@@ -46,9 +49,11 @@ A production-ready Retrieval-Augmented Generation (RAG) pipeline for medical inf
 
 | Category | Technologies |
 |----------|-------------|
-| **Data Processing** | Python, PyArrow, Pandas, JSONL |
-| **ML/Embeddings** | PyTorch, Sentence-Transformers, Qwen |
+| **Data Processing** | Python, PyArrow, Pandas |
+| **Embeddings** | Qwen2.5-Embedding-1.8B, Sentence-Transformers, PyTorch |
+| **LLM** | Qwen (via DashScope API) |
 | **Vector Database** | FAISS (cosine similarity) |
+| **Fine-Tuning** | LoRA (optional, for safety/formatting) |
 | **Backend** | FastAPI, Uvicorn |
 | **Evaluation** | MedMCQA, PubMedQA, MMLU-Medical |
 
@@ -180,6 +185,25 @@ The RAG engine includes:
 - **Cosine-threshold hallucination detection**
 - **Medical disclaimers** appended to all responses
 - **Source citations** for verification
+
+## Optional: Fine-Tuning with LoRA
+
+The project includes scaffolding for instruction fine-tuning using LoRA adapters. **Important:** Fine-tuning targets only:
+- Structured reasoning format
+- Safety/refusal behavior
+- Output formatting
+
+Medical facts are NOT fine-tuned - they come from RAG retrieval.
+
+```json
+{
+  "instruction": "Summarize warnings using provided evidence.",
+  "input": "Evidence: [FDA drug label text]",
+  "output": "Based on the FDA label, the key warnings are..."
+}
+```
+
+Feed the curated JSONL into your preferred LoRA pipeline (e.g., Qwen + PEFT).
 
 ## License
 
