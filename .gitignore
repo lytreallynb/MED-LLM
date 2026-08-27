@@ -56,3 +56,7 @@ results/*
 !results/spot_check_50.md
 !results/behavior_sft_grpo.json
 !results/behavior_v2_summary.json
+!results/behavior_base_v2.json
+!results/behavior_sft_v2.json
+!results/behavior_sft_grpo_v2.json
+!results/behavior_v2_summary.json

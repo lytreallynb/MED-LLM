@@ -79,5 +79,26 @@
       "abstention_recall_hard": 0.871,
       "gold_citation_accuracy_hard": 0.9818
     }
+  },
+  "kaggle_batch_rerun_t4": {
+    "note": "Third independent run: batch kernel yutonglyu/medllm-v2-chain version 2 on a Kaggle T4 (pinned via --accelerator NvidiaTeslaT4 after the P100 attempt failed on sm_60 torch incompatibility), 2026-08-27, ~85 min. This run's FULL per-example records are archived as results/behavior_*_v2.json in this repo. Base eval again bitwise identical. Three-run spreads (SFT): hard abstention recall 0.871/0.871/0.903, hard gold citation 0.9818 all runs, answer faithfulness 0.996/0.980/0.998. GRPO at parity a third time.",
+    "sft": {
+      "abstention_recall": 0.9538,
+      "abstention_recall_hard": 0.9032,
+      "gold_citation_accuracy": 0.9912,
+      "gold_citation_accuracy_hard": 0.9818,
+      "answer_faithfulness": 0.9977,
+      "low_faithfulness_rate": 0.0,
+      "disclaimer_rate": 0.9553
+    },
+    "sft_grpo": {
+      "abstention_recall": 0.9538,
+      "abstention_recall_hard": 0.9032,
+      "gold_citation_accuracy": 0.9737,
+      "gold_citation_accuracy_hard": 0.9818,
+      "answer_faithfulness": 0.9982,
+      "low_faithfulness_rate": 0.0,
+      "disclaimer_rate": 0.9665
+    }
   }
 }
