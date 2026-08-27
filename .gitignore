@@ -55,3 +55,4 @@ results/*
 !results/behavior_tuned.json
 !results/spot_check_50.md
 !results/behavior_sft_grpo.json
+!results/behavior_v2_summary.json

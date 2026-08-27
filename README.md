@@ -357,6 +357,33 @@ Both missing ingredients named above are now implemented, and the earlier
 results in this section were measured on the easy-only dataset, so they are
 not comparable with runs on the regenerated one.
 
+Retraining the full stack on the regenerated dataset (Colab T4: SFT 12 min,
+GRPO 200 steps 32 min; metrics in `results/behavior_v2_summary.json`) gives:
+
+| Metric | Base | SFT | SFT+GRPO |
+| --- | --- | --- | --- |
+| Abstention recall | 0.585 | 0.939 | 0.939 |
+| Abstention recall (hard) | 0.387 | 0.871 | 0.871 |
+| Gold-citation accuracy | 0.491 | 0.991 | 0.991 |
+| Gold-citation accuracy (hard) | 0.400 | 0.982 | 0.982 |
+| Answer faithfulness | 0.582 | 0.996 | 0.996 |
+| Low-faithfulness rate | 0.355 | 0.000 | 0.000 |
+
+Two findings. First, the hard examples work as designed: the base model,
+which could previously shortcut negatives by drug-name matching, drops to
+0.387 abstention recall on the hard subset, and a third of its answers fall
+below 0.5 faithfulness; SFT on the hard training split recovers 0.871 and
+0.982 there. Second, GRPO is a null result a second time, and for the same
+mechanism at a deeper level: the SFT policy's own samples are already
+extractive copies with correct citations, so even the continuous
+faithfulness term saturates near 1.0 on-policy, group advantages stay zero
+(train_loss ~1e-8), and 200 steps produce no measurable change. The honest
+conclusion for this task scale: behavior alignment here is bought by harder
+data and SFT, not by RL on top of it. The remaining headroom (the 13% of
+hard negatives still answered) would need targeted data or sampling that
+concentrates on those failures, not more GRPO steps on prompts the policy
+already solves.
+
 * Hard examples (`build_finetune_dataset.py --hard-fraction`, default 0.5):
   the distractor passage comes from the same drug's label but a different
   section, so drug-name matching alone can no longer solve the example.
