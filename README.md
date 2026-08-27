@@ -401,6 +401,14 @@ already solves.
   test split; fabricated content scores near zero. The eval reports
   `answer_faithfulness` and `low_faithfulness_rate`.
 
+The v2 chain (SFT, GRPO, three evals) was run twice on the regenerated
+dataset: on a Colab T4 and independently reproduced on a Kaggle P100
+(`scripts/kaggle_chain.sh`). Both runs agree on every conclusion: hard-split
+abstention recall 0.39 to 0.87, hard gold-citation accuracy 0.40 to 0.98,
+answer faithfulness 0.58 to 0.98-1.00 across runs, and a second GRPO null
+result with the same mechanism (reward saturation, near-zero train loss).
+Both runs' metrics are recorded in `results/behavior_v2_summary.json`.
+
 #### Scale comparison: Qwen2.5-7B-Instruct (QLoRA)
 
 The same experiment was repeated on Qwen2.5-7B-Instruct with the base model

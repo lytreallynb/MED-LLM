@@ -50,5 +50,34 @@
     "n_hard": 86,
     "abstention_recall_hard": 0.871,
     "gold_citation_accuracy_hard": 0.9818
+  },
+  "kaggle_rerun": {
+    "note": "Independent reproduction of the full chain on a Kaggle P100 (2026-08-27, scripts/kaggle_chain.sh, same commit and seed for data, fresh SFT+GRPO training). Base eval reproduced the run-1 base numbers exactly (greedy decoding is deterministic). Key conclusions replicate: hard-split SFT lift and GRPO-at-parity. Training stochasticity moves some SFT positives metrics slightly (gold citation 0.9912 -> 0.9825, faithfulness 0.996 -> 0.980); report faithfulness conservatively as 0.98.",
+    "sft": {
+      "abstention_precision": 0.9683,
+      "abstention_recall": 0.9385,
+      "false_abstain_rate_on_positives": 0.0175,
+      "positive_citation_rate": 0.9912,
+      "citation_validity": 1.0,
+      "gold_citation_accuracy": 0.9825,
+      "answer_faithfulness": 0.9802,
+      "low_faithfulness_rate": 0.0179,
+      "disclaimer_rate": 0.9665,
+      "abstention_recall_hard": 0.871,
+      "gold_citation_accuracy_hard": 0.9818
+    },
+    "sft_grpo": {
+      "abstention_precision": 0.9683,
+      "abstention_recall": 0.9385,
+      "false_abstain_rate_on_positives": 0.0175,
+      "positive_citation_rate": 0.9912,
+      "citation_validity": 1.0,
+      "gold_citation_accuracy": 0.9825,
+      "answer_faithfulness": 0.9803,
+      "low_faithfulness_rate": 0.0179,
+      "disclaimer_rate": 0.9721,
+      "abstention_recall_hard": 0.871,
+      "gold_citation_accuracy_hard": 0.9818
+    }
   }
 }
