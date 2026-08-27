@@ -12,7 +12,7 @@ services:
       - MEDLLM_INDEX_PATH=/app/data/clean/fda.index
       - MEDLLM_META_PATH=/app/data/clean/fda_meta.jsonl
       - MEDLLM_TOP_K=4
-      - MEDLLM_EMBED_MODEL=Qwen/Qwen2.5-Embedding-1.8B
+      - MEDLLM_EMBED_MODEL=Qwen/Qwen3-Embedding-0.6B
     volumes:
       # Mount data directory for pre-built index
       - ./data:/app/data:ro

@@ -31,7 +31,7 @@ except ImportError as exc:  # pragma: no cover
 
 @dataclass
 class EmbeddingModelConfig:
-    model_name: str = "Qwen/Qwen2.5-Embedding-1.8B"
+    model_name: str = "Qwen/Qwen3-Embedding-0.6B"
     batch_size: int = 8
     max_length: int = 1024
     device: str | None = None
@@ -43,7 +43,7 @@ class EmbeddingConfig:
     chunk_path: Path = Path("data/clean/chunks.jsonl")
     metadata_output: Path = Path("data/clean/fda_meta.jsonl")
     embedding_output: Path = Path("data/clean/fda_embeddings.npy")
-    model_name: str = "Qwen/Qwen2.5-Embedding-1.8B"
+    model_name: str = "Qwen/Qwen3-Embedding-0.6B"
     batch_size: int = 8
     max_length: int = 1024
     device: str | None = None
@@ -64,7 +64,14 @@ class QwenEmbeddingBackend:
 
     def __init__(self, config: EmbeddingModelConfig):
         self.config = config
-        self.device = config.device or ("cuda" if torch.cuda.is_available() else "cpu")
+        if config.device:
+            self.device = config.device
+        elif torch.cuda.is_available():
+            self.device = "cuda"
+        elif torch.backends.mps.is_available():
+            self.device = "mps"
+        else:
+            self.device = "cpu"
         self._mode = "hf"
         self._sentence_transformer: SentenceTransformer | None = None
         self._tokenizer = None
@@ -209,7 +216,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--chunks", default="data/clean/chunks.jsonl", help="Path to chunk JSONL file")
     parser.add_argument("--meta-output", default="data/clean/fda_meta.jsonl", help="Where to save chunk metadata aligned with embeddings")
     parser.add_argument("--embeddings", default="data/clean/fda_embeddings.npy", help="Path for the numpy embedding matrix")
-    parser.add_argument("--model", default="Qwen/Qwen2.5-Embedding-1.8B", help="Hugging Face model id for embeddings")
+    parser.add_argument("--model", default="Qwen/Qwen3-Embedding-0.6B", help="Hugging Face model id for embeddings")
     parser.add_argument("--batch-size", type=int, default=8, help="Batch size for embedding computation")
     parser.add_argument("--max-length", type=int, default=1024, help="Token truncation length")
     parser.add_argument("--device", default=None, help="Torch device override (cpu/cuda)")

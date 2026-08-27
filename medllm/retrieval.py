@@ -249,7 +249,7 @@ def _build_arg_parser() -> argparse.ArgumentParser:
     parser.add_argument("--index", default="data/clean/fda.index", help="Path to FAISS index")
     parser.add_argument("--metadata", default="data/clean/fda_meta.jsonl", help="Chunk metadata JSONL")
     parser.add_argument("--top-k", type=int, default=4, help="Number of neighbors to retrieve")
-    parser.add_argument("--embedding-model", default="Qwen/Qwen2.5-Embedding-1.8B", help="Embedding model for queries")
+    parser.add_argument("--embedding-model", default="Qwen/Qwen3-Embedding-0.6B", help="Embedding model for queries")
     parser.add_argument("--device", default=None, help="Torch device override")
     parser.add_argument("--no-qwen", action="store_true", help="Skip calling the Qwen generator and print the prompt only")
     parser.add_argument("--qwen-model", default="qwen2.5-72b-instruct", help="DashScope Qwen generation model id")

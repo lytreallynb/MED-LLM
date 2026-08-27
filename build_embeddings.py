@@ -10,7 +10,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--chunks", default="data/clean/chunks.jsonl", help="Path to the chunk JSONL produced by clean_text_fields.py")
     parser.add_argument("--meta-output", default="data/clean/fda_meta.jsonl", help="Where to write aligned chunk metadata")
     parser.add_argument("--embeddings", default="data/clean/fda_embeddings.npy", help="Destination for the numpy embedding matrix")
-    parser.add_argument("--model", default="Qwen/Qwen2.5-Embedding-1.8B", help="Hugging Face embedding model identifier")
+    parser.add_argument("--model", default="Qwen/Qwen3-Embedding-0.6B", help="Hugging Face embedding model identifier")
     parser.add_argument("--batch-size", type=int, default=8, help="Batch size for embedding computation")
     parser.add_argument("--max-length", type=int, default=1024, help="Token truncation length")
     parser.add_argument("--device", default=None, help="Optional torch device override (cpu/cuda)")

@@ -9,9 +9,9 @@ CHUNK_FILE ?= $(DATA_DIR)/clean/chunks.jsonl
 META_FILE ?= $(DATA_DIR)/clean/fda_meta.jsonl
 EMBEDDINGS_FILE ?= $(DATA_DIR)/clean/fda_embeddings.npy
 INDEX_FILE ?= $(DATA_DIR)/clean/fda.index
-EMBED_MODEL ?= Qwen/Qwen2.5-Embedding-1.8B
+EMBED_MODEL ?= Qwen/Qwen3-Embedding-0.6B
 
-.PHONY: help dirs download parquet chunk embeddings index rag pipeline clean test serve finetune-samples
+.PHONY: help dirs download parquet chunk embeddings index rag pipeline clean test serve finetune-samples eval-dataset evaluate dashboard
 
 help:
 	@echo "Available targets:"
@@ -84,6 +84,29 @@ test:
 # Run tests with coverage
 test-cov:
 	$(PYTHON) -m pytest tests/ -v --cov=medllm --cov-report=term-missing
+
+# Build a retrieval-grounded eval dataset from chunk metadata
+eval-dataset:
+	$(PYTHON) build_eval_dataset.py \
+		--metadata $(META_FILE) \
+		--output $(DATA_DIR)/eval/fda_eval.jsonl \
+		--max-questions 100
+
+# Run the evaluation suite (retrieval metrics work without DASHSCOPE_API_KEY)
+evaluate:
+	$(PYTHON) -m medllm.evaluation \
+		--dataset fda=$(DATA_DIR)/eval/fda_eval.jsonl \
+		--index $(INDEX_FILE) \
+		--metadata $(META_FILE) \
+		--embedding-model $(EMBED_MODEL) \
+		--no-qwen \
+		--output results/metrics.json
+
+# Render the metrics dashboard from results/metrics.json
+dashboard:
+	$(PYTHON) render_dashboard.py \
+		--metrics results/metrics.json \
+		--output results/dashboard.html
 
 # Create sample fine-tuning data
 finetune-samples:

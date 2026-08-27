@@ -1,0 +1,2047 @@
+{
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "adapter": "output/grpo_grounding_v1/grpo_adapter",
+ "base_adapter": "sft_adapter_1p5b",
+ "test_data": "data/test.jsonl",
+ "decoding": {
+  "greedy": true,
+  "max_new_tokens": 140
+ },
+ "load_in_4bit": false,
+ "metrics": {
+  "n": 179,
+  "n_negative": 63,
+  "n_positive": 116,
+  "abstention_precision": 0.9688,
+  "abstention_recall": 0.9841,
+  "false_abstain_rate_on_positives": 0.0172,
+  "positive_citation_rate": 0.9914,
+  "citation_validity": 1.0,
+  "gold_citation_accuracy": 0.9914,
+  "disclaimer_rate": 0.9497
+ },
+ "records": [
+  {
+   "index": 0,
+   "output": "According to the FDA label for Ketorolac Tromethamine [2]: dermatologic: exfoliative dermatitis, erythema multiforme, Lyell's syndrome, bullous reactions including Stevens-Johnson syndrome and toxic epidermal necrolysis Gastrointestinal: acute pancreatitis, liver failure, ulcerative stomatitis, exacerbation of inflammatory bowel disease (ulcerative colitis, Crohn's disease)\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 1,
+   "output": "According to the FDA label for Tranexamic Acid [1]: 1 INDICATIONS AND USAGE Tranexamic acid injection, USP is indicated in patients with hemophilia for short-term use (2 to 8 days) to reduce or prevent hemorrhage and reduce the need for replacement therapy during and following tooth extraction.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 2,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 3,
+   "output": "According to the FDA label for Foster And Thrive Castor Oil [2]: Warnings Do not use when abdominal pain, nausea, or vomiting are present unless directed by a doctor.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 4,
+   "output": "According to the FDA label for Metoclopramide [2]: signs of TD, thereby masking the underlying disease process. The effect of this symptomatic suppression upon the long term course of TD is unknown. Therefore, metoclopramide should not be used for the symptomatic control of TD.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 5,
+   "output": "According to the FDA label for Maxalt [1]: 1 INDICATIONS AND USAGE MAXALT ® and MAXALT-MLT ® are indicated for the acute treatment of migraine with or without aura in adults and in pediatric patients 6 to 17 years old. Limitations of Use MAXALT should only be used where a clear diagnosis of migraine has been established. If a patient has no response for the first migraine attack treated with MAXALT, the diagnosis of migraine should be reconsidered before MAXALT is administered to treat any subsequent attacks.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 6,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": true
+  },
+  {
+   "index": 7,
+   "output": "According to the FDA label for Etodolac [1]: WARNINGS CARDIOVASCULAR EFFECTS Cardiovascular Thrombotic Events Clinical trials of several COX-2 selective and nonselective NSAIDs of up to three years duration have shown an increased risk of serious cardiovascular (CV) thrombotic events, including myocardial infarction (MI) and stroke, which can be fatal.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 8,
+   "output": "According to the FDA label for Tranexamic Acid [2]: greater than 5.7 mg/dL were 51, 39, and 19%, respectively. The 24-hour tranexamic acid plasma concentrations for these patients demonstrated a direct relationship to the degree of renal impairment. Therefore, dose adjustment is needed in patients with renal impairment [see Dosage and Administration ( 2.2 ), Use in Specific Populations ( 8.6 )] .\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 9,
+   "output": "According to the FDA label for Varenicline [1]: disturbances (6% vs. 1%), and other mood disorders and disturbances (5% vs. 2%).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 10,
+   "output": "According to the FDA label for Calcium Acetate [2]: 12 CLINICAL PHARMACOLOGY Patients with ESRD retain phosphorus and can develop hyperphosphatemia. High serum phosphorus can precipitate serum calcium resulting in ectopic calcification. Hyperphosphatemia also plays a role in the development of secondary hyperparathyroidism in patients with ESRD.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 11,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 12,
+   "output": "According to the FDA label for Low Dose Aspirin [2]: Warnings Reye's syndrome : Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product. When using this product, if changes in behavior with nausea and vomiting occur, consult a doctor because these symptoms could be an early sign of Reye's syndrome, a rare but serious illness.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 13,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 14,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 15,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 16,
+   "output": "According to the FDA label for Betamethasone Dipropionate [2]: 1 INDICATIONS AND USAGE Betamethasone dipropionate cream (augmented) is a corticosteroid indicated for the relief of the inflammatory and pruritic manifestations of corticosteroid-responsive dermatoses in patients 13 years of age or older.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 17,
+   "output": "According to the FDA label for Burn Ease, 3.5G [1]: Directions • Adults and children 2 years of age and older: Apply to affected area not more than 3 to 4 times daily.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 18,
+   "output": "According to the FDA label for Metoclopramide [2]: INDICATIONS AND USAGE The use of Metoclopramide Oral Solution is recommended for adults only. Therapy should not exceed 12 weeks in duration. Symptomatic Gastroesophageal Reflux Metoclopramide Oral Solution is indicated as short-term (4 to 12 weeks) therapy for adults with symptomatic, documented gastroesophageal reflux who fail to respond to conventional therapy.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 19,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 20,
+   "output": "According to the FDA label for Ketorolac Tromethamine [1]: patients (see WARNINGS ), and patients less than 50 kg (110 lbs): The recommended dose is 15 mg ketorolac tromethamine injection every 6 hours. The maximum daily dose for these populations should not exceed 60 mg.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 21,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 22,
+   "output": "According to the FDA label for Metoclopramide [2]: ence. Hematologic A few cases of neutropenia, leukopenia, or agranulocytosis, generally without clearcut relationship to metoclopramide. Methemoglobinemia, in adults and especially with overdosage in neonates (see OVERDOSAGE ).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 23,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 24,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 25,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 26,
+   "output": "According to the FDA label for Clopidogrel [2]: 1 INDICATIONS AND USAGE Clopidogrel tablets are a P2Y 12 platelet inhibitor indicated for: Acute coronary syndrome – For patients with non–ST-segment elevation ACS (unstable angina [UA]/non–ST-elevation myocardial infarction [NSTEMI]), clopidogrel tablets have been shown to reduce the rate of myocardial infarction (MI) and stroke.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 27,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 28,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 29,
+   "output": "According to the FDA label for Glimepiride [2]: %, 22%, and 15%, respectively, and decreased glimepiride CL/f by 18%.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 30,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 31,
+   "output": "According to the FDA label for Entresto [1]: in patients who were treated with ENTRESTO in the double-blind period of PARADIGM-HF are shown in Table 3.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 32,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 33,
+   "output": "According to the FDA label for Veradex-E [1]: Warnings: For external use only. Discontinue use if signs of irritation appear. If condition worsens consult a doctor. Do not use over deep, infected, or puncture wounds.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 34,
+   "output": "According to the FDA label for Allergy Relief [1]: Directions adults and children 6 years and over 1 tablet daily; not more than 1 tablet in 24 hours\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 35,
+   "output": "According to the FDA label for Etodolac [2]: .",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 36,
+   "output": "According to the FDA label for Varenicline [1]: treatment group Nausea 27 10 Headache 17 11 Abnormal dreams 11 8 Insomnia 11 5 Irritability 11 8 Psychiatric Adverse Events ≥2% in any treatment group and not included above Depressed mood disorders and disturbances 11 9 Anxiety 7 9 Agitation 7 4 Tension 4 3 Hostility 2 0.4 Restlessness 2 2 In the trial of patients without or with a history of psychiatric disorder (7), the most common adverse events in subjects treated with varen",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 37,
+   "output": "According to the FDA label for Daytime Cold And Flu [2]: Uses temporarily relieves these symptoms due to a cold minor aches and pains headache nasal and sinus congestion sore throat cough due to minor throat and bronchial irritation temporarily reduces fever\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 38,
+   "output": "According to the FDA label for Varenicline [1]: 5.9) ] . Table 1 shows the adverse events for varenicline and placebo in the 12- week fixed dose premarketing studies with titration in the first week [Studies 2 (titrated arm only), 4, and 5].\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 39,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 40,
+   "output": "According to the FDA label for Entresto [1]: recommended doses. Oral pellets are contained within each capsule. Use the entire contents of the capsules to achieve the dose.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 41,
+   "output": "According to the FDA label for Triple Prep Spf 40 [2]: For External use only Do not use on damaged or broken skin When using this product , keep out of eyes. Rinse with water to remove\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 42,
+   "output": "According to the FDA label for Childrens Delsym Cough Plus Cold Night Time [2]: Directions this product does not contain directions or complete warnings for adult use do not give more than directed (see Overdose warning )\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 43,
+   "output": "According to the FDA label for Maxalt [1]: -MLT were assessed in a controlled clinical trial in the acute treatment of migraines (Study 7) that included a total of 1382 pediatric patients 6-17 years of age, of which 977 (72%) administered at least one dose of study treatment (MAXALT-MLT and/or placebo)\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 44,
+   "output": "According to the FDA label for Glimepiride [2]: 4 CONTRAINDICATIONS Glimepiride tablets are contraindicated in patients with a history of a hypersensitivity reaction to: Glimepiride or any of the product’s ingredients [see Warnings and Precautions (5.2) ].\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 45,
+   "output": "According to the FDA label for Trazodone Hydrochloride [2]: 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action The mechanism of trazodone's antidepressant action is not fully understood, but is thought to be related to its enhancement of serotonergic activity in the CNS.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 46,
+   "output": "According to the FDA label for Aura Lane 4 Pc Hand Sanitizer Set - White Jasmine, Velvet Rose, Orange Blossom And Freesia Scent [1]: Warnings For external use only. Flammable. Keep away from fire or flame. When using this product:\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 47,
+   "output": "According to the FDA label for Entresto [2]: LBQ657 and valsartan are shown in Figure 2. Figure 2: Pharmacokinetics of ENTRESTO in Specific Populations Note: Child-Pugh Classification was used for hepatic impairment.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 48,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 49,
+   "output": "According to the FDA label for Glimepiride [1]: 2 DOSAGE AND ADMINISTRATION Recommended starting dose is 1 or 2 mg once daily. Increase in 1 or 2 mg increments no more frequently than every 1 to 2 weeks based on glycemic response. Maximum recommended dose is 8 mg once daily ( 2.1 ).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 50,
+   "output": "According to the FDA label for Low Dose Aspirin [2]: Uses for the temporary relief of minor aches and pains or as recommended by your doctor. Because of its delayed action, this product will not provide fast relief of headaches or other symptoms needing immediate relief.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 51,
+   "output": "According to the FDA label for Daytime Cold And Flu [2]: Directions do not take more than directed (see overdose warning )\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 52,
+   "output": "According to the FDA label for Colgate Max Fresh Cool Mint [2]: Warnings Keep out of reach of children under 6 years of age. If more than used for brushing is accidentally swallowed, get medical help or contact a Poison Control Center right away.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 53,
+   "output": "According to the FDA label for Varenicline [1]: idine, and metformin. No clinically meaningful pharmacokinetic drug-drug interactions have been identified. Metformin When co-administered to 30 smokers, varenicline (1 mg twice daily) did not alter the steady-state pharmacokinetics of metformin (500 mg twice daily), which is a substrate of OCT2. Metformin had no effect on varenicline steady-state pharmacokinetics.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 54,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 55,
+   "output": "According to the FDA label for Veradex-E [1]: Indications: Temporarily relieves minor burns, dry, chapped, fissured and macerated skin and lips, also relieves Psoriasis, Eczema, mild sunburn, abrasions and contusions, diaper dermatitis, hemorrhoids, and prickly heat.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 56,
+   "output": "According to the FDA label for Clopidogrel [2]: headache, ageusia Psychiatric disorders: Confusion, hallucinations Respiratory, thoracic and mediastinal disorders: Bronchospasm, interstitial pneumonitis, eosinophilic pneumonia Renal and urinary disorders: Increased creatinine levels Skin and subcutaneous tissue disorders: Maculopapular, erythematous or exfoliative rash, urticaria, bullous dermatitis, eczema, toxic epidermal necrolysis, Stevens-Johnson syndrome, acute general\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 57,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 58,
+   "output": "According to the FDA label for Mentholatum Pain Relieving [2]: Warnings For external use only When using this product use only as directed do not get into eyes or on mucous membranes do not apply to wounds or to damaged skin do not bandage tightly do not use with a heating pad, other heat sources, or right after a shower/bath do not use in combination with other external analgesic products Stop use and ask a doctor if condition worsens excessive irritat\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 59,
+   "output": "According to the FDA label for Clopidogrel [1]: The effect of proton pump inhibitors (PPI) on the systemic exposure to the clopidogrel active metabolite following multiple doses of clopidogrel 75 mg evaluated in dedicated drug interaction studies is presented in Figure 1.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 60,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 61,
+   "output": "According to the FDA label for Clopidogrel [2]: Bleeding Events in COMMIT (% patients) Type of Bleeding Clopidogrel (+ aspirin) (n=22961) Placebo (+ aspirin) (n=22891) p-value * Major bleeds were cerebral bleeds or noncerebral bleeds thought to have caused death or that required transfusion. Major* noncerebral or cerebral bleeding 0.6 0.5 0.59 Major noncerebral 0.4 0.3 0.48 Fatal 0.2 0.2 0.90 Hem",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 62,
+   "output": "According to the FDA label for Clopidogrel [2]: 2 DOSAGE AND ADMINISTRATION Acute coronary syndrome ( 2.1 ) – Initiate clopidogrel tablets with a single 300 mg oral loading dose and then continue at 75 mg once daily.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 63,
+   "output": "According to the FDA label for Etodolac [1]: patients taking NSAIDs such as etodolac. Some of these events have been fatal or life-threatening. DRESS typically, although not exclusively, presents with fever, rash, lymphadenopathy, and/or facial swelling. Other clinical manifestations may include hepatitis, nephritis, hematological abnormalities, myocarditis, or myositis. Sometimes symptoms of DRESS may resemble an acute viral infection. Eosinophilia is often present. Because this disorder is variable in its presentation, other organ systems not noted here may be involved.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 64,
+   "output": "According to the FDA label for Medline [1]: Warnings For external use only Do not use on deep or puncture wounds animal bites serious burns When using this product do not get into eyes Stop use and ask a doctor if condition worsens symptoms last for more than 7 days or clear up and occur again within a few days Keep out of reach of children. In case of accidental ingestion, get medical help or contact a Poison Control Center right away.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 65,
+   "output": "According to the FDA label for Entresto [2]: 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action ENTRESTO contains a neprilysin inhibitor, sacubitril, and an angiotensin receptor blocker, valsartan. ENTRESTO inhibits neprilysin (neutral endopeptidase; NEP) via LBQ657, the active metabolite of the prodrug sacubitril, and blocks the angiotensin II type-1 (AT 1 ) receptor via valsartan. The cardiovascular and renal effects of ENTRESTO in heart failure patients are attributed",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 66,
+   "output": "According to the FDA label for Ps-2205 Bzk Antiseptic Towelettes [1]: Warnings For External Use Only Do not use • As an antiseptic for more than 1 week • In the eyes Ask a doctor before use if You have deep or puncture wounds, animal bites, or serious burns Stop use and ask a doctor if • Irritation and redness develop • Condition persists or gets worse Keep out of reach of children. If swallowed, get medical help or contact a Poison Control Center (1-800-222-1222) right away\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 67,
+   "output": "According to the FDA label for Doxorubicin Hydrochloride [2]: Administration • Visually inspect for particulate matter and discoloration prior to administration, whenever solution and container permit. Discard if the solution is discolored, cloudy, or contains particulate matter.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 68,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 69,
+   "output": "According to the FDA label for Entresto [2]: and do not refrigerate. Shake before each use. * Ora-Sweet SF ® and Ora-Plus ® are registered trademarks of Paddock Laboratories, Inc. 2.5 Preparation and Administration of Oral Pellets ENTRESTO SPRINKLE are oral pellets contained within capsules. Do not swallow the capsules. Do not chew or crush the oral pellets. ENTRESTO SPRINKLE can also be substituted in patients unable to swallow tablets. Use the entire contents of the capsules to achieve the dose. To administer ENTRESTO oral pellettes, open the capsule and sprinkle the full content onto 1 to 2 teaspoons of soft",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 70,
+   "output": "According to the FDA label for Medline [1]: Uses temporarily protects minor cuts, scrapes and burns helps prevent and temporarily protects and helps relieve chapped or cracked skin helps treat and prevent diaper rash.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 71,
+   "output": "According to the FDA label for Maxalt [1]: 10 mg was administered to subjects (n=12) receiving concomitant therapy with the selective, reversible MAO-A inhibitor, moclobemide 150 mg t.i.d., there were mean increases in rizatriptan AUC and C max of 119% and 41% respectively; and the AUC of the active N-monodesmethyl metabolite of rizatriptan was increased more than 400%.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 72,
+   "output": "According to the FDA label for Trazodone Hydrochloride [2]: 4 CONTRAINDICATIONS None ( 4 ).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 73,
+   "output": "According to the FDA label for Trazodone Hydrochloride [2]: 6 ADVERSE REACTIONS Most common adverse reactions (incidence ≥ 5% and twice that of placebo) are: edema, blurred vision, syncope, drowsiness, fatigue, diarrhea, nasal congestion, weight loss ( 6 ).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 74,
+   "output": "According to the FDA label for Varenicline [1]: 2 DOSAGE AND ADMINISTRATION Begin varenicline tablets dosing one week before the date set by the patient to stop smoking. Alternatively, the patient can begin varenicline tablets dosing and then quit smoking between days 8 and 35 of treatment.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 75,
+   "output": "According to the FDA label for Palonosetron Hydrochloride [2]: CONTRAINDICATIONS Palonosetron hydrochloride should not be used whenever stimulation of gastrointestinal motility might be dangerous, e.g., in the presence of gastrointestinal hemorrhage, mechanical obstruction, or perforation.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 76,
+   "output": "According to the FDA label for Metoclopramide [2]: with doses from 20 to 100 mg. Peak concentrations increase linearly with dose; time to peak concentrations remains the same; whole body clearance is unchanged; and the elimination rate remains the same. The average elimination half-life in individuals with normal renal function is 5 to 6 hours.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 77,
+   "output": "According to the FDA label for Palonosetron Hydrochloride [1]: increase in plasma palonosetron concentration from Day 1 to Day 3 was 110 ± 45%.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 78,
+   "output": "According to the FDA label for Ketorolac Tromethamine [1]: 04±0.35 C avg 4 (mcg/mL) [steady state qid] 0.59±0.2** 0.94±0.29** 1.88±0.59** N/A 1.09±0.3** 2.17±0.59 V β 5 (L/kg) ———— 0.175±0.039 ———— 0.210±0.044 % Dose metabolized = <50",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 79,
+   "output": "According to the FDA label for Tranexamic Acid [2]: 2 DOSAGE AND ADMINISTRATION Before Extraction: Administer 10 mg/kg actual body weight of tranexamic acid injection intravenously with replacement therapy. ( 2.1 )\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 80,
+   "output": "According to the FDA label for Palonosetron Hydrochloride [1]: mg intravenous dose of palonosetron hydrochloride injection was administered on day 1 and oral aprepitant for 3 days (125 mg/80 mg/80 mg), the pharmacokinetics of palonosetron were not significantly altered (AUC: no change, C max : 15% increase).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 81,
+   "output": "According to the FDA label for Etodolac [1]: ymosis, anemia, thrombocytopenia, bleeding time increased, agranulocytosis, hemolytic anemia, aplastic anemia, leukopenia, neutropenia, pancytopenia.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 82,
+   "output": "According to the FDA label for Etodolac [2]: alert for signs and symptoms of GI ulceration and bleeding during NSAID therapy and promptly initiate additional evaluation and treatment if a serious GI adverse event is suspected. This should include discontinuation of the NSAID until a serious GI adverse event is ruled out. For high risk patients, alternate therapies that do not involve NSAIDs should be considered.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 83,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 84,
+   "output": "According to the FDA label for Extra Strength Pain Relief [2]: Directions do not take more than directed (see overdose warning ) adults and children 12 years and over take 2 caplets every 6 hours while symptoms last do not take more than 6 caplets in 24 hours, unless directed by a doctor do not use for more than 10 days unless directed by a doctor children under 12 years ask a doctor\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 85,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 86,
+   "output": "According to the FDA label for Entresto [1]: 6 ADVERSE REACTIONS Clinically significant adverse reactions that appear in other sections of the labeling include: Angioedema [see Warnings and Precautions (5.2)]\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 87,
+   "output": "According to the FDA label for Doxorubicin Hydrochloride [2]: 6 ADVERSE REACTIONS The following clinically significant adverse reactions are described elsewhere in the labeling. • Cardiomyopathy and Arrhythmias [see Warnings and Precautions (5.1) ] • Secondary Malignancies [see Warnings and Precautions (5.2) ] • Extravasation and Tissue Necrosis [see Warnings and Precautions (5.3) ] • Severe Myelosuppression [see Warnings and Precautions (5.4) ] • Tumor Lysis Syndrome [see Warnings and Precautions (5",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 88,
+   "output": "According to the FDA label for Glimepiride [1]: 6 ADVERSE REACTIONS The following serious adverse reactions are discussed in more detail below and elsewhere in the labeling: Hypoglycemia [see Warnings and Precautions (5.1) ] Hemolytic anemia [see Warnings and Precautions (5.3) ]\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 89,
+   "output": "According to the FDA label for Glimepiride [2]: 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Glimepiride primarily lowers blood glucose by stimulating the release of insulin from pancreatic beta cells.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 90,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 91,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 92,
+   "output": "According to the FDA label for Trazodone Hydrochloride [1]: 2 DOSAGE AND ADMINISTRATION Starting dose: 150 mg in divided doses daily. May be increased by 50 mg per day every three to four days. Maximum dose: 400 mg per day in divided doses ( 2 ).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 93,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 94,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 95,
+   "output": "According to the FDA label for Ketorolac Tromethamine [2]: orlactamine by the intramuscular route in pediatric patients. Renal Insufficiency Based on single-dose data only, the mean half-life of ketorolac tromethamine in renally impaired patients is between 6 and 19 hours, and is dependent on the extent of the impairment.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 96,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 97,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 98,
+   "output": "According to the FDA label for Doxorubicin Hydrochloride [2]: 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action The cytotoxic effect of doxorubicin hydrochloride on malignant cells and its toxic effects on various organs are thought to be related to nucleotide base intercalation and cell membrane lipid binding activities of doxorubicin.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 99,
+   "output": "According to the FDA label for Entresto [2]: 2 DOSAGE AND ADMINISTRATION The recommended starting dosage for adults is 49 mg/51 mg orally twice daily. The target maintenance dose is 97 mg/103mg orally twice daily.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 100,
+   "output": "According to the FDA label for Etodolac [2]: CLINICAL PHARMACOLOGY Pharmacodynamics Etodolac is a nonsteroidal anti-inflammatory drug (NSAID) that exhibits anti-inflammatory, analgesic, and antipyretic activities in animal models. The mechanism of action of etodolac, like that of other NSAIDs, is not completely understood, but may be related to the prostaglandin synthetase inhibition.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 101,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 102,
+   "output": "According to the FDA label for Clopidogrel [1]: there was a 57% decrease in active metabolite C max .\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 103,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 104,
+   "output": "According to the FDA label for Ketorolac Tromethamine [2]: 00-5000 units q12h), warfarin and dextrans have not been studied extensively, but may also be associated with an increased risk of bleeding. Until data from such studies are available, physicians should carefully weigh the benefits against the risks, and use such concomitant therapy in these patients only extremely cautiously. Patients receiving therapy that affects hemostasis should be monitored closely. In postmarketing experience, postoperative hematomas and other signs of wound bleeding have been reported in association with the peri-operative use of intravenous or intramuscular dosing\n\nDisclaimer: This information is",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 105,
+   "output": "According to the FDA label for Mentholatum Pain Relieving [2]: Directions adults and children 12 years and over: apply to affected area not more than 3 to 4 times daily children under 12 years: ask a doctor\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 106,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 107,
+   "output": "According to the FDA label for Foster And Thrive Original Formula Eye Drops [2]: Warnings For external use only Ask a doctor before use if you have narrow angle glaucoma When using this product pupils may become enlarged temporarily to avoid contamination, do not touch tip of container to any surface. Replace cap after using. if solution changes color or becomes cloudy, do not use overuse may produce increased redness of the eye remove contact lenses before using Stop use and ask a doctor if you experience eye pain changes in vision continued redness or irritati\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 108,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 109,
+   "output": "According to the FDA label for Ketorolac Tromethamine [1]: CONTRAINDICATIONS (see also Boxed WARNING ) Ketorolac Tromethamine is contraindicated in patients with previously demonstrated hypersensitivity to ketorolac tromethamine.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 110,
+   "output": "According to the FDA label for Daytime Cold And Flu [2]: Warnings Liver warning: This product contains acetaminophen. Severe liver damage may occur if you take: more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert: Acetaminophen may cause severe skin reactions. Symptoms may incl\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 111,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 112,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 113,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 114,
+   "output": "According to the FDA label for Varenicline [2]: ISSUE Epidermal and Dermal Conditions Rash 1 3 2 Pruritis 0 1 1 METABOLISM and NUTRITION Appetite/General Nutrition Disorders Increased appetite 4 3 2 Decreased appetite/ Anorexia 1 2 1 The overall pattern and frequency of adverse events during the longer-term premarketing trials was similar to those described in Table 1, though several of the most common events were reported by a greater proportion of patients with long-term use (e.g., nausea was reported in 40%\n\nDisclaimer: This information is for educational purposes only. Consult",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 115,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 116,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 117,
+   "output": "According to the FDA label for Trazodone Hydrochloride [2]: abolism and nutrition disorders: methemoglobinemia Nervous system disorders: aphasia, ataxia, cerebrovascular accident, extrapyramidal symptoms, grand mal seizures, paresthesia, tardive dyskinesia, vertigo Psychiatric disorders: abnormal dreams, agitation, anxiety, hallucinations, insomnia, paranoid reaction, psychosis, stupor Renal and urinary disorders: urinary incontinence, urinary retention Reproductive\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 118,
+   "output": "According to the FDA label for Low Dose Aspirin [2]: Directions drink a full glass of water with each dose adults and children 12 years and over: take 4 to 8 tablets every 4 hours not to exceed 48 tablets in 24 hours unless directed by a doctor children under 12 years: consult a doctor\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 119,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 120,
+   "output": "According to the FDA label for Palonosetron Hydrochloride [1]: 1 INDICATIONS AND USAGE Palonosetron hydrochloride injection is indicated in adults for prevention of: acute and delayed nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy (MEC).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 121,
+   "output": "According to the FDA label for Palonosetron Hydrochloride [2]: 6 ADVERSE REACTIONS Serious or otherwise clinically significant adverse reactions reported in other sections of labeling: Hypersensitivity Reactions [see Warnings and Precautions ( 5.1 )] Serotonin Syndrome [see Warnings and Precautions ( 5.2 )]\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 122,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 123,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 124,
+   "output": "According to the FDA label for Etodolac [2]: %) 1.7 (60%) 1.2 (43%) 1.7 (88%) 0.9 (67%) 2.1 (46%) 1.1 (15%) Oral Clearance, mL/h/kg (CL/F) 49.1 (33%) 49.4 (33%) 35.7 (28%) 45.7 (27%) NA NA 58.3 (19%) 42 (43%) Apparent Volume of Distribution, mL/kg (Vd/F)",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 125,
+   "output": "According to the FDA label for Varenicline [1]: because its efficacy in this population was not demonstrated [see Use in Specific Populations (8.4) ] .\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 126,
+   "output": "According to the FDA label for Clopidogrel [1]: 4 CONTRAINDICATIONS Active pathological bleeding, such as peptic ulcer or intracranial hemorrhage (4.1)\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 127,
+   "output": "According to the FDA label for Varenicline [1]: consider a gradual approach to quitting smoking with varenicline tablets. Patients should begin varenicline tablets dosing and reduce smoking by 50% from baseline within the first four weeks, by an additional 50% in the next four weeks, and continue reducing with the goal of reaching complete abstinence by 12 weeks. Continue varenicline tablets treatment for an additional 12 weeks, for a total of 24 weeks of treatment.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 128,
+   "output": "According to the FDA label for Power Stick For Her Roll-On Antiperspirant Deodorant Powder Fresh [1]: Warnings For external ues only. Do not use on broken skin. Stop use if rash or irritation occurs\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 129,
+   "output": "According to the FDA label for Varenicline [2]: 4 CONTRAINDICATIONS Varenicline tablets are contraindicated in patients with a known history of serious hypersensitivity reactions or skin reactions to varenicline tablets.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 130,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 131,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 132,
+   "output": "According to the FDA label for Botnia Gentle Sun Spf 30 [2]: Warnings: For external use only Do not use On damaged or broken skin. When using this product keep out of eyes. Rinse with water to remove. Stop use and ask a doctor if rash or irritation develops and lasts.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 133,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 134,
+   "output": "According to the FDA label for Varenicline [1]: 1 INDICATIONS AND USAGE Varenicline tablets are indicated for use as an aid to smoking cessation treatment.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 135,
+   "output": "According to the FDA label for Clear Acne Spot Treatment [2]: Directions cleanse the skin thoroughly before applying medication cover the entire affected area with a thin layer 1 to 3 times daily because excessive drying of the skin may occur, start with 1 application daily, then gradually increase to 2 or 3 times daily if needed or as directed by a doctor if bothersome dryness or peeling occurs, reduce application to once a day or every other day for children under 10 years of age and under, consult your physician\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 136,
+   "output": "According to the FDA label for Entresto [2]: reduction in the therapeutic effect. ENTRESTO can therefore be administered with or without food. Distribution Sacubitril, LBQ657 and valsartan are highly bound to plasma proteins (94% to 97%).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 137,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 138,
+   "output": "According to the FDA label for Extra Strength Pain Relief [1]: Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product Allergy alert acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription).\n\nDisclaimer: This information is for educational purposes only",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 139,
+   "output": "According to the FDA label for Betamethasone Dipropionate [2]: 4 CONTRAINDICATIONS Betamethasone dipropionate cream (augmented), is contraindicated in patients who are hypersensitive to betamethasone dipropionate, to other corticosteroids, or to any ingredient in this preparation.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 140,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 141,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 142,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 143,
+   "output": "According to the FDA label for Doxorubicin Hydrochloride [2]: ranging from 2 months to 20 years, doxorubicin clearance averaged 1443 ± 114 mL/min/m 2 .\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 144,
+   "output": "According to the FDA label for Maxalt [2]: 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Rizatriptan binds with high affinity to human cloned 5-HT 1B/1D receptors.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 145,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 146,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 147,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 148,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 149,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 150,
+   "output": "According to the FDA label for Betamethasone Dipropionate [2]: 6 ADVERSE REACTIONS The most common adverse reaction reported in 0.4% of adult patients is stinging. ( 6.1 )\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 151,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 152,
+   "output": "According to the FDA label for Ketorolac Tromethamine [1]: ose study with 10 mg ketorolac tromethamine (n = 9) demonstrated that the S-enantiomer is cleared approximately two times faster than the R-enantiomer and that the clearance was independent of the route of administration. This means that the ratio of S/R plasma concentrations decreases with time after each dose. There is little or no inversion of the R- to S- form in humans.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 153,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 154,
+   "output": "According to the FDA label for Maxalt [2]: 3 3 1 Nausea 4 6 4 Neurological 14 20 11 Dizziness 4 9 5 Headache <2 2 <1 Somnolence 4 8 4 Other Asthenia/fatigue 4 7 2 The frequencies of adverse reactions in clinical trials did not increase when up to three doses were taken within 24 hours.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 155,
+   "output": "According to the FDA label for Extra Strength Pain Relief [2]: Uses temporarily relieves minor aches and pains due to: the common cold headache backache minor pain of arthritis toothache muscular aches premenstrual and menstrual cramps temporarily reduces fever\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 156,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 157,
+   "output": "According to the FDA label for Tranexamic Acid [2]: 12 CLINICAL PHARMACOLOGY 12.1 Mechanism of Action Tranexamic acid is a synthetic lysine amino acid derivative, which diminishes the dissolution of hemostatic fibrin by plasmin. In the presence of tranexamic acid, the lysine receptor binding sites of plasmin for fibrin are occupied, preventing binding to fibrin monomers, thus preserving and stabilizing fibrin's matrix structure.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 158,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 159,
+   "output": "According to the FDA label for Ketorolac Tromethamine [2]: ADVERSE REACTIONS Adverse reaction rates increase with higher doses of ketorolac tromethamine. Practitioners should be alert for the severe complications of treatment with ketorolac tromethamine, such as G.I. ulceration, bleeding and perforation, postoperative bleeding, acute renal failure, anaphylactic and anaphylactoid reactions and liver failure (see Boxed WARNING , WARNINGS , PRECAUTIONS , and DOSAGE AND ADMINISTRATION ).\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 160,
+   "output": "According to the FDA label for Tranexamic Acid [1]: 6 ADVERSE REACTIONS The following clinically significant adverse reactions are described elsewhere in the labeling: Thromboembolic Risk [see Warnings and Precautions ( 5.1 )] Seizures [see Warnings and Precautions ( 5.3 )] Hypersensitivity Reactions [see Warnings and Precautions ( 5.4 )] Visual Disturbances [see Warnings and Precautions ( 5.5 )] Dizziness [see Warnings and Precautions ( 5.6 )]\n\nDisclaimer: This information is for educational purposes only. Consult a",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 161,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 162,
+   "output": "According to the FDA label for Metoclopramide [1]: DOSAGE AND ADMINISTRATION Therapy with metoclopramide oral solution should not exceed 12 weeks in duration.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 163,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 164,
+   "output": "According to the FDA label for Aura Lane 4 Pc Hand Sanitizer Set - White Jasmine, Velvet Rose, Orange Blossom And Freesia Scent [2]: Directions • Spray product in your palm and rub hands together until dry. • For children under 6, use only under adult supervision. • Not recommended for infants.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 165,
+   "output": "According to the FDA label for Glimepiride [1]: presence of at least one symptom that the investigator believed might be related to hypoglycemia; a concurrent glucose measurement was not required) was 4% for glimepiride tablets 1 mg, 17% for glimepiride tablets 4 mg, 16% for glimepiride tablets 8 mg and 0% for placebo. All of these events were self-treated. In a randomized, double-blind, placebo-controlled monotherapy trial of 22 weeks duration, patients received a starting dose of either 1 mg glimepiride tablets or placebo daily. The dose of glime",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 166,
+   "output": "According to the FDA label for Ketorolac Tromethamine [1]: . Patients taking thiazides or loop diuretics may have impaired response to these therapies when taking NSAIDs. NSAIDs, including ketorolac tromethamine, should be used with caution in patients with hypertension. Blood pressure (BP) should be monitored closely during the initiation of NSAID treatment and throughout the course of therapy.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 167,
+   "output": "According to the FDA label for Foster And Thrive Castor Oil [2]: Directions Preferably take on an empty stomach. May be taken with juice to improve taste. Adults and children 12 yrs. of age and older: 1 to 4 tablespoonfuls in a single daily dose or as directed by a doctor. Children 2 to under 12 yrs. of age: 1 to 3 tablespoonfuls in a single dose or as directed by a doctor. Children under 2 yrs. of age:\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 168,
+   "output": "According to the FDA label for Calcium Acetate [2]: 2 DOSAGE AND ADMINISTRATION The recommended initial dose of calcium acetate for the adult dialysis patient is 2 capsules with each meal. Increase the dose gradually to lower serum phosphorus levels to the target range, as long as hypercalcemia does not develop.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 169,
+   "output": "According to the FDA label for Varenicline [2]: myalgia. Infrequent: arthritis, muscle cramp, musculoskeletal pain. Rare: myositis, osteoporosis. Nervous System Disorders. Frequent: disturbance in attention, dizziness. Infrequent: amnesia, convulsion, migraine, parosmia, syncope, tremor. Rare: balance disorder, cerebrovascular accident, dysarthria, mental impairment,\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 170,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 171,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 172,
+   "output": "According to the FDA label for Childrens Delsym Cough Plus Cold Night Time [2]: Warnings Liver warning This product contains acetaminophen. Severe liver damage may occur if your child takes: more than 5 doses in 24 hours, which is the maximum daily amount with other drugs containing acetaminophen Allergy alert Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening blisters rash If a skin reaction occurs, stop use and seek medical help right away.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 173,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  },
+  {
+   "index": 174,
+   "output": "According to the FDA label for Varenicline [2]: 6 ADVERSE REACTIONS The following serious adverse reactions were reported in postmarketing experience and are discussed in greater detail in other sections of the labeling:\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 175,
+   "output": "According to the FDA label for Trazodone Hydrochloride [2]: rowsiness 24% 6% 41% 20% Fatigue 11% 4% 6% 3% Headache 10% 5% 20% 16%\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 176,
+   "output": "According to the FDA label for Metoclopramide [1]: ADVERSE REACTIONS In general, the incidence of adverse reactions correlates with the dose and duration of metoclopramide administration. The following reactions have been reported, although in most instances, data do not permit an estimate of frequency:\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 177,
+   "output": "According to the FDA label for Etodolac [2]: loop diuretics may have impaired response to these therapies when taking NSAIDs. NSAIDs, including etodolac, should be used with caution in patients with hypertension. Blood pressure (BP) should be monitored closely during the initiation of NSAID treatment and throughout the course of therapy.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": true
+  },
+  {
+   "index": 178,
+   "output": "The provided evidence does not contain the answer to this question. I cannot answer without supporting FDA label evidence.\n\nDisclaimer: This information is for educational purposes only. Consult a healthcare provider for medical advice.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": true
+  }
+ ]
+}

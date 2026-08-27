@@ -2,7 +2,7 @@
 
 A Retrieval-Augmented Generation pipeline for medical Q&A using:
 - FDA drug label data from openFDA API
-- Qwen embeddings (Qwen2.5-Embedding-1.8B)
+- Qwen embeddings (Qwen3-Embedding-0.6B)
 - FAISS vector index for similarity search
 - Qwen LLM for response generation via DashScope
 - Optional LoRA fine-tuning for safety/formatting

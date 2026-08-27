@@ -8,8 +8,11 @@ __pycache__/
 # OS
 .DS_Store
 
-# Ignore ALL data (raw + processed)
-data/
+# Ignore ALL data (raw + processed); the fine-tuning splits are re-included
+# further down, after the large-file-type rules that would re-ignore them.
+data/*
+!data/finetune/
+data/finetune/*
 
 # Model checkpoints / vector DB
 models/
@@ -33,6 +36,22 @@ chroma_db/
 *.bin
 *.ckpt
 
+# Fine-tuning splits are tracked deliberately: small (2.4MB), deterministic
+# (seed 17), and needed to reproduce training on Colab from a bare clone.
+# This block must stay below the *.jsonl rule or it has no effect.
+!data/finetune/train.jsonl
+!data/finetune/test.jsonl
+
+# Training run artifacts (adapters, logs) stay local
+output/
+
 # Logs, temp
 logs/
 tmp/
+# Run artifacts stay out, but the evidence files from the LoRA behavior
+# experiment are tracked deliberately.
+results/*
+!results/behavior_base.json
+!results/behavior_tuned.json
+!results/spot_check_50.md
+!results/behavior_sft_grpo.json

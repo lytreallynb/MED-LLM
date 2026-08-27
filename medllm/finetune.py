@@ -80,10 +80,12 @@ class LoraFinetuneConfig:
     batch_size: int = 4
     gradient_accumulation_steps: int = 4
     warmup_ratio: float = 0.1
-    max_length: int = 512
+    max_length: int = 768
 
     # Device
     device: Optional[str] = None
+    # 4-bit NF4 quantized base (QLoRA). Lets a 7B model train on a 16GB GPU.
+    load_in_4bit: bool = False
 
 
 class MedicalInstructDataset(Dataset):
@@ -99,7 +101,7 @@ class MedicalInstructDataset(Dataset):
         self,
         examples: List[FinetuneExample],
         tokenizer,
-        max_length: int = 512,
+        max_length: int = 768,
     ):
         self.examples = examples
         self.tokenizer = tokenizer
@@ -121,15 +123,42 @@ class MedicalInstructDataset(Dataset):
             text,
             truncation=True,
             max_length=self.max_length,
-            padding="max_length",
+            padding=False,
             return_tensors="pt",
         )
 
+        input_ids = encoded["input_ids"].squeeze(0)
+        attention_mask = encoded["attention_mask"].squeeze(0)
         return {
-            "input_ids": encoded["input_ids"].squeeze(),
-            "attention_mask": encoded["attention_mask"].squeeze(),
-            "labels": encoded["input_ids"].squeeze(),
+            "input_ids": input_ids,
+            "attention_mask": attention_mask,
+            "labels": input_ids.clone(),
         }
+
+
+def collate_variable_length(features: List[dict], pad_token_id: int) -> dict:
+    """Pad a batch to its own longest sequence; pad positions get label -100.
+
+    Length is rounded up to a multiple of 64. On Apple MPS the allocator caches
+    blocks per tensor shape, so unbucketed per-example lengths make cached
+    memory grow with every new length until the machine swaps. Bucketing caps
+    the number of distinct shapes.
+    """
+    max_len = max(f["input_ids"].size(0) for f in features)
+    max_len = ((max_len + 63) // 64) * 64
+    batch = {"input_ids": [], "attention_mask": [], "labels": []}
+    for f in features:
+        n_pad = max_len - f["input_ids"].size(0)
+        batch["input_ids"].append(
+            torch.nn.functional.pad(f["input_ids"], (0, n_pad), value=pad_token_id)
+        )
+        batch["attention_mask"].append(
+            torch.nn.functional.pad(f["attention_mask"], (0, n_pad), value=0)
+        )
+        batch["labels"].append(
+            torch.nn.functional.pad(f["labels"], (0, n_pad), value=-100)
+        )
+    return {k: torch.stack(v) for k, v in batch.items()}
 
 
 def load_examples(path: Path) -> List[FinetuneExample]:
@@ -208,7 +237,14 @@ def finetune_with_lora(
     if get_peft_model is None:
         raise RuntimeError("peft library required for LoRA fine-tuning: pip install peft")
 
-    device = config.device or ("cuda" if torch.cuda.is_available() else "cpu")
+    if config.device:
+        device = config.device
+    elif torch.cuda.is_available():
+        device = "cuda"
+    elif torch.backends.mps.is_available():
+        device = "mps"
+    else:
+        device = "cpu"
     print(f"Using device: {device}")
 
     # Load tokenizer and model
@@ -221,12 +257,40 @@ def finetune_with_lora(
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    model = AutoModelForCausalLM.from_pretrained(
-        config.model_name,
-        trust_remote_code=True,
-        torch_dtype=torch.float16 if device == "cuda" else torch.float32,
-        device_map="auto" if device == "cuda" else None,
-    )
+    if config.load_in_4bit:
+        if device != "cuda":
+            raise RuntimeError("--load-in-4bit requires a CUDA GPU")
+        from transformers import BitsAndBytesConfig
+        from peft import prepare_model_for_kbit_training
+
+        model = AutoModelForCausalLM.from_pretrained(
+            config.model_name,
+            trust_remote_code=True,
+            quantization_config=BitsAndBytesConfig(
+                load_in_4bit=True,
+                bnb_4bit_quant_type="nf4",
+                bnb_4bit_use_double_quant=True,
+                bnb_4bit_compute_dtype=torch.float16,
+            ),
+            device_map="auto",
+        )
+        model = prepare_model_for_kbit_training(model)
+    else:
+        if device == "cuda":
+            model_dtype = torch.float16
+        elif device == "mps":
+            model_dtype = torch.bfloat16
+        else:
+            model_dtype = torch.float32
+        model = AutoModelForCausalLM.from_pretrained(
+            config.model_name,
+            trust_remote_code=True,
+            dtype=model_dtype,
+            device_map="auto" if device == "cuda" else None,
+            # torch 2.4 MPS leaks memory through the SDPA attention path during
+            # backward; eager attention is slower per step but stays flat.
+            attn_implementation="eager" if device == "mps" else None,
+        )
 
     # Configure LoRA
     lora_config = LoraConfig(
@@ -261,17 +325,37 @@ def finetune_with_lora(
         warmup_ratio=config.warmup_ratio,
         logging_steps=10,
         save_strategy="epoch",
-        evaluation_strategy="epoch" if eval_dataset else "no",
+        eval_strategy="epoch" if eval_dataset else "no",
         fp16=device == "cuda",
+        gradient_checkpointing=config.load_in_4bit,
+        gradient_checkpointing_kwargs={"use_reentrant": False},
         report_to="none",
     )
 
     # Train
+    callbacks = []
+    if device == "mps":
+        from transformers import TrainerCallback
+
+        class MpsCacheCallback(TrainerCallback):
+            """Release cached MPS blocks periodically so allocator growth
+            does not push the host into swap."""
+
+            def on_step_end(self, args, state, control, **kwargs):
+                if state.global_step % 25 == 0:
+                    torch.mps.empty_cache()
+
+        callbacks.append(MpsCacheCallback())
+
     trainer = Trainer(
         model=model,
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=eval_dataset,
+        data_collator=lambda feats: collate_variable_length(
+            feats, tokenizer.pad_token_id
+        ),
+        callbacks=callbacks or None,
     )
 
     print("Starting LoRA fine-tuning...")
@@ -310,6 +394,10 @@ def main():
     train_parser.add_argument("--batch-size", type=int, default=4, help="Batch size")
     train_parser.add_argument("--lr", type=float, default=2e-4, help="Learning rate")
     train_parser.add_argument("--lora-r", type=int, default=8, help="LoRA rank")
+    train_parser.add_argument(
+        "--load-in-4bit", action="store_true",
+        help="QLoRA: quantize the base model to 4-bit NF4 (CUDA only)"
+    )
 
     args = parser.parse_args()
 
@@ -323,6 +411,7 @@ def main():
             batch_size=args.batch_size,
             learning_rate=args.lr,
             lora_r=args.lora_r,
+            load_in_4bit=args.load_in_4bit,
         )
         finetune_with_lora(
             config,

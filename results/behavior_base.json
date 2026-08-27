@@ -1,0 +1,2002 @@
+{
+ "model": "Qwen/Qwen2.5-1.5B-Instruct",
+ "adapter": null,
+ "test_data": "data/test.jsonl",
+ "decoding": {
+  "greedy": true,
+  "max_new_tokens": 140
+ },
+ "metrics": {
+  "n": 179,
+  "n_negative": 63,
+  "n_positive": 116,
+  "abstention_precision": 0.7627,
+  "abstention_recall": 0.7143,
+  "false_abstain_rate_on_positives": 0.1207,
+  "positive_citation_rate": 0.6034,
+  "citation_validity": 0.9857,
+  "gold_citation_accuracy": 0.5776,
+  "disclaimer_rate": 0.0
+ },
+ "records": [
+  {
+   "index": 0,
+   "output": "The adverse reactions of Ketorolac Tromethamine include:\n\n- Myocardial infarction\n- Vasculitis\n- Dermatologic: exfoliative dermatitis, erythema multiforme, Lyell's syndrome, bullous reactions including Stevens-Johnson syndrome and toxic epidermal necrolysis\n- Gastrointestinal: acute pancreatitis, liver failure, ulcerative stomatitis, exacerbation of inflammatory bowel disease (ulcerative colitis, Crohn's disease)\n- Hemic and Lymphatic: agranulocytosis, aplastic anemia, hemolytic anemia, lymphadenopathy, pancytopenia, post",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 1,
+   "output": "The instruction asks for a response based on the given evidence, specifically focusing on what Tranexamic Acid is used for. The relevant information can be found in Evidence Passage 1:\n\n**Response:** Tranexamic acid injection, USP is indicated in patients with hemophilia for short-term use (2 to 8 days) to reduce or prevent hemorrhage and reduce the need for replacement therapy during and following tooth extraction. \n\nTherefore, Tranexamic Acid is used for reducing or preventing hemorrhage and reducing the need for replacement therapy during and following tooth extraction in patients with hemophilia. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 2,
+   "output": "Based on Evidence [2], Botnia Gentle Sun SPF 30 is used for external application only. It should be avoided contacting the eyes and should not be used beyond the recommended dosage without medical guidance. Additionally, it warns against putting the product into the rectum through fingers or any mechanical devices. Therefore, the correct usage instructions from the given evidence are:\n\n**Botnia Gentle Sun SPF 30 is used externally only.** [2]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 3,
+   "output": "Based on evidence [2], the warning associated with Foster & Thrive Castor Oil is:\n\nDo not use if printed seal under cap is broken or missing. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 4,
+   "output": "The warning associated with Metoclopramide is that it can mask the underlying disease process, thereby potentially causing a symptom complex known as Neuroleptic Malignant Syndrome (NMS). This syndrome includes symptoms such as hyperthermia, muscle rigidity, altered consciousness, and evidence of autonomic instability. It's important to note that while these effects may occur rarely, they can be serious and potentially life-threatening. Therefore, Metoclopramide should not be used for the symptomatic control of TD due to its potential risk of inducing NMS. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 5,
+   "output": "Based on Evidence #1, Maxalt is indicated for the acute treatment of migraine with or without aura in both adults and pediatric patients aged 6 to 17 years old. Therefore, Maxalt is primarily used to treat migraines. \n\nThe relevant passage from Evidence #1 is:\n\n**[1]** (MAXALT, indications_and_usage) 1 INDICATIONS AND USAGE MAXALT ® and MAXALT-MLT ® are indicated for the acute treatment of migraine with or without aura in adults and in pediatric patients 6 to 17 years old. Limitations of Use MAXALT should only be used where a clear diagnosis of migraine has been established. If a patient has no response",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 6,
+   "output": "The recommended dosage of Medline is to apply it \"as needed\" for diaper rash, which means applying it liberally as often as necessary, particularly after changing wet and soiled diapers or whenever there's prolonged exposure to wet diapers. Therefore, the correct answer is that the dosage recommendation is \"as needed.\" [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 7,
+   "output": "Based on Evidence 1, the warning associated with Etodolac is:\n\n**Cardiovascular Thrombotic Events**\n\nThis includes an increased risk of serious cardiovascular (CV) thrombotic events such as myocardial infarction (MI) and stroke, which can be fatal. It's noted that this risk was observed in clinical trials involving COX-2 selective and nonselective NSAIDs for up to three years duration. However, it's also stated that it's unclear whether the risk for these CV thrombotic events is similar across all NSAIDs. Additionally, there's mention of a possible difference in risk between those with and without pre-existing cardiovascular diseases or risk factors.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 8,
+   "output": "The information provided in Evidence 2 states that \"greater than 5.7 mg/dL were 51, 39, and 19%, respectively.\" This suggests that there are different percentages associated with higher levels of tranexamic acid in the blood depending on the patient's condition. However, this specific detail about percentages is not directly related to how Tranexamic Acid works. \n\nTherefore, based solely on the given evidence, I cannot determine how Tranexamic Acid works. Hence, my response is:\n\nI am unable to answer this question. [not enough information]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 9,
+   "output": "Based on Evidence #1, the adverse reactions associated with Varenicline include:\n\n- Disturbances (6%)\n- Other mood disorders and disturbances (5%)",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 10,
+   "output": "The mechanism of action for Calcium Acetate involves combining with dietary phosphate to form an insoluble calcium phosphate complex, which is then excreted in the feces, thereby decreasing serum phosphorus concentration. This process helps manage hyperphosphatemia in patients with End-Stage Renal Disease (ESRD). [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 11,
+   "output": "Based on the provided evidence, there is no information about how Entresto works. Therefore, I cannot provide an answer based solely on the given evidence. [No suitable evidence found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 12,
+   "output": "The warnings associated with Low Dose Aspirin are:\n\n- Reye's syndrome: Children and teenagers who have or are recovering from chicken pox or flu-like symptoms should not use this product.\n- Allergy alert: Aspirin may cause a severe allergic reaction, including hives, facial swelling, shock, asthma (wheezing), and stomach bleeding.\n- Stomach bleeding warning: This product contains an NSAID that can cause severe stomach bleeding, especially in those over 60 years old. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 13,
+   "output": "The instruction asks for information about Doxorubicin Hydrochloride based on the given evidence. However, there is no mention of Doxorubicin Hydrochloride in the provided evidence. Therefore, I cannot provide an answer based solely on this evidence. \n\n**Response:** \nI am unable to answer the question as it pertains to Doxorubicin Hydrochloride, which is not mentioned in the provided evidence. [n]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 14,
+   "output": "Based on the provided evidence, there is no information about the recommended dosage of Betamethasone Dipropionate. Therefore, I cannot provide a specific answer based solely on this evidence. [n/A]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 15,
+   "output": "The warning associated with Allergy Relief is:\n\n- **Hypersensitivity**: Patients known to have hypersensitivity to palonosetron or any of its components should avoid it.\n- **GI Ulceration and Bleeding**: During NSAID therapy, there's an alert for signs and symptoms of GI ulceration and bleeding, which should prompt immediate additional evaluation and treatment if a serious GI adverse event is suspected. This includes discontinuing NSAIDs and considering alternative therapies that don't involve them due to their potential risks like renal effects. The long-term use of NSAIDs can lead to renal papillary necrosis and other renal injuries, especially in high-risk patients. Renal toxicity may occur even",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 16,
+   "output": "Betamethasone Dipropionate is used for the relief of the inflammatory and pruritic manifestations of corticosteroid-responsive dermatoses in patients 13 years of age and older. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 17,
+   "output": "The recommended dosage of Burn Ease, 3.5G is applied to affected areas not more than 3 to 4 times daily for adults and children over 2 years old. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 18,
+   "output": "The information provided states that Metoclopramide Oral Solution is indicated for adults only and can be used as short-term therapy for adults with symptomatic, documented gastroesophageal reflux who fail to respond to conventional therapy. Therefore, the correct answer is:\n\n**Indications and usage:** The use of Metoclopramide Oral Solution is recommended for adults only. Therapy should not exceed 12 weeks in duration. Symptomatic Gastroesophageal Reflux\n\nThis corresponds to Evidence #2. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 19,
+   "output": "Based on the given evidence, there is no information provided about how Maxalt works. Therefore, I cannot answer the question based solely on this evidence. [No suitable evidence found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 20,
+   "output": "The recommended dosage of Ketorolac Tromethamine is 15 mg ketorolac tromethamine injection every 6 hours. This recommendation applies specifically to patients weighing more than 50 kg (110 lbs), although it's important to note that the maximum daily dose for this population should not exceed 60 mg. Additionally, for patients who experience breakthrough pain, increasing the dose or frequency of ketorolac tromethamine is generally discouraged without consulting a healthcare provider. It's also worth noting that ketorolac tromethamine should not be mixed with morphine due to potential interactions. Regarding Foster and Thrive Castor Oil, the warning states that it",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 21,
+   "output": "Based on Evidence [2], the warning associated with Glimepiride is that it should not be used for the treatment of type 1 diabetes mellitus or diabetic ketoacidosis because it would not be effective in these settings. Therefore, the answer is:\n\nNot for treating type 1 diabetes mellitus or diabetic ketoacidosis, as it would not be effective in these settings. [2]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 22,
+   "output": "Based on Evidence 2, the adverse reactions associated with Metoclopramide include:\n\n- Rash\n- Urticaria\n- Bronchospasm\n- History of asthma\n- Angioneurotic edema\n- Glossal or laryngeal edema\n- Porphyria\n\nThese reactions are mentioned specifically under \"Allergic Reactions\" in Evidence 2. Therefore, the adverse reactions of Metoclopramide are listed as follows:\n\nRash, Urticaria, Bronchospasm, History of Asthma, Angioneurotic Edema, Glossal or Laryngeal Edema, Porphyria. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 23,
+   "output": "Based on the information provided in Evidence 1, which discusses ENTRESTO's mechanism of action, it states:\n\n\"the cardiovascular and renal effects of ENTRESTO in heart failure patients are attributed to the increased levels of peptides that are degraded by neprilysin\"\n\nThis passage does not provide any specific information about the recommended dosage of Colgate Max Fresh Cool Mint. Therefore, I cannot determine the correct dosage based solely on this evidence. [No]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 24,
+   "output": "The instruction asks me to use only the numbered evidence passages to answer the question about the recommended dosage of Suds High Foaming Antiseptic Hand And Body Wash. However, there is no relevant information provided in the given evidence that discusses the dosage of Suds High Foaming Antiseptic Hand And Body Wash. Therefore, I cannot provide an answer based on the available evidence. [n.] - Evidence not cited.",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 25,
+   "output": "Based on Evidence #1, doxorubicin hydrochloride is contraindicated for patients who have a history of angioedema related to previous ACE inhibitor or ARB therapy. Therefore, the correct answer is:\n\n**Doxorubicin Hydrochloride should not be used in patients with a history of angioedema related to previous ACE inhibitor or ARB therapy.** [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 26,
+   "output": "The information provided in Evidence 2 directly answers the question by stating that Clopidogrel tablets are \"a P2Y 12 platelet inhibitor\" which is used for:\n\n- **Acute Coronary Syndrome:** Specifically, it reduces the rate of myocardial infarction (MI) and stroke.\n- **Recent MI, Recent Stroke, or Established Peripheral Arterial Disease:** It also reduces thrombosis risk associated with these conditions.\n\nTherefore, based on the given evidence, Clopidogrel is primarily used to prevent thrombotic events such as myocardial infarction and stroke in patients who meet certain criteria. The specific indication mentioned in Evidence 2 is for acute coronary",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 27,
+   "output": "Based on the information provided in Evidence 1, we know that Maxalt is an antihypertensive medication. However, the specific dosing instructions for Maxalt are not mentioned in the given evidence. Therefore, I cannot provide the recommended dosage of Maxalt based solely on this evidence. [0]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [
+    0
+   ],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 28,
+   "output": "The given evidence does not provide information about how glimepiride works. Therefore, I cannot answer the question based on this evidence. [No suitable evidence found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 29,
+   "output": "The information provided in Evidence 2 does not directly address how Glimepiride works. Therefore, I cannot provide a specific answer based solely on this evidence. [No]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 30,
+   "output": "Based on the provided evidence, there is no information about how Ketorolac Tromethamine works. Therefore, I cannot provide an answer based solely on this set of evidence. [No suitable evidence found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 31,
+   "output": "Based on Evidence #1, we can see that in the double-blind period of PARADIGM-HF, the incidence of angioedema was higher in patients treated with ENTRESTO than enalapril at 0.5%. Additionally, the incidence of angioedema in Black patients was 2.4% with ENTRESTO and 0.5% with enalapril. Therefore, the adverse reaction of Entresto is angioedema. [n. 1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 32,
+   "output": "Based on the provided evidence, there is no mention of \"DCH Hemorrhoidal\" in any of the given passages. Therefore, I am unable to provide a response based solely on this information. [No suitable answer found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 33,
+   "output": "Based on Evidence 1, the warning associated with Veradex-E is:\n\nFor external use only. Discontinue use if signs of irritation appear. If condition worsens consult a doctor. Do not use over deep, infected, or puncture wounds. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 34,
+   "output": "The recommended dosage of Allergy Relief is 1 tablet daily for adults and children aged 6 years and above, not exceeding 1 tablet per day. For those under 6 years old, it's advised to consult a doctor first. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 35,
+   "output": "Based on Evidence 2, Etodolac works by being approximately 1% excreted unchanged in the urine, with about 72% of the dose excreted as parent drug plus metabolite. Specifically, it includes -etodolac, -etodolac glucuronide, -hydroxylated metabolites (6-, 7-, and 8-OH), -hydroxylated metabolite glucuronides, and unidentified metabolites. This indicates that Etodolac primarily undergoes metabolism rather than direct excretion through the kidneys. Therefore, the mechanism of action involves both metabolic conversion and possibly some degree of excretion via other pathways such as",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 36,
+   "output": "[1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 37,
+   "output": "Based on Evidence 2, Daytime Cold and Flu is used to temporarily relieve symptoms such as:\n\n- Headache\n- Nasal and sinus congestion\n- Sore throat\n- Cough\n- Minor throat and bronchial irritation\n- Temporary reduction in fever\n\nTherefore, the answer is: Daytime Cold and Flu is used to temporarily relieve these symptoms related to a cold, including headaches, nasal congestion, sore throats, coughs, and minor throat and bronchial irritations, along with reducing fever. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 38,
+   "output": "Based on Evidence #1, the adverse reactions of Varenicline are listed in Table 1 under \"Adverse Events\" section. Specifically, it mentions that the adverse events were categorized using the Medical Dictionary for Regulatory Activities (MedDRA, Version 7.1) and that MedDRA High Level Group Terms (HLGT) reported in ≥5% of patients in the varenicline 1 mg twice daily dose group, and more commonly than in the placebo group, are listed. Additionally, subordinate Preferred Terms (PT) reported in ≥1% of varenicline patients (and at least 0.5% more frequent than placebo) are also mentioned. Therefore",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 39,
+   "output": "Based on Evidence 1, the recommendation for the initial dose of calcium acetate for an adult dialysis patient is 2 capsules with each meal. This information pertains to dosing instructions rather than explaining how calcium acetate works. Therefore, I cannot provide a response based solely on the given evidence. [n.] 1",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 40,
+   "output": "The recommended dosage of Entresto is 1.6 mg/kg for patients weighing less than 13 kg, increasing by 0.5 mg/kg for every additional kilogram up to a maximum of 3.1 mg/kg for patients weighing over 19 kg. Therefore, the correct answer is:\n\n**1.6 mg/kg**\n\nThis corresponds to option **A** in the multiple-choice format. The information provided in Evidence 1 directly states that the recommended mg/kg doses are of the combined amount of sacubitril and valsartan. This supports the calculation of the total recommended dosage based on the patient's weight. \n\nTherefore, the final answer is A. ",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 41,
+   "output": "Based on evidence [2], the warning associated with Triple Prep SPF 40 is:\n\n\"For External use only\"\n\nThis information comes from the second piece of evidence provided. There is no other relevant information about specific warnings related to Triple Prep SPF 40 in the given text. Therefore, I cannot provide additional warnings beyond what was explicitly stated in the evidence. \n\nThe final answer is: For External use only. [2]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 42,
+   "output": "The recommended dosage of Childrens Delsym Cough Plus Cold Night Time is 10 mL in the dosing cup provided every 4 hours while symptoms last, with no more than 5 doses in any 24-hour period. This information can be found in Evidence Passage 2.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 43,
+   "output": "Based on Evidence #1, the adverse reactions of Maxalt were assessed in a controlled clinical trial involving 1382 pediatric patients aged 6-17 years old. The data indicates that the incidence of adverse reactions among these patients was comparable to that observed in patients receiving placebo. Specifically, the adverse reaction profile aligns with what would be anticipated based on previous studies conducted in adults. Therefore, the adverse reactions associated with Maxalt include mental depression, which can range from mild to severe, potentially leading to suicidal ideation or even suicide; and extrapyramidal symptoms such as acute dystonic reactions, which typically manifest within the first 24 to 48 hours after starting treatment",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 44,
+   "output": "The patient should not use Glimepiride if they have a history of an allergic reaction to sulfonamide derivatives. This can be seen in Evidence Passage [2], which states \"Hypersensitivity to glimepiride or any of the product's ingredients ( 4 ) Hypersensitivity to sulfonamide derivatives ( 4 )\" indicating that patients with a history of an allergic reaction to sulfonamide derivatives should avoid using Glimepiride. Therefore, the correct answer is:\n\n**Glimepiride should not be used by patients with a history of an allergic reaction to sulfonamide derivatives.** [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 45,
+   "output": "The mechanism of action for Trazodone Hydrochloride involves enhancing serotonergic activity in the central nervous system through its selective serotonin reuptake inhibition (SSRI) properties and antagonistic effects at 5-HT receptors. This results in an antidepressant effect due to changes in serotonergic neurotransmission. Therefore, the correct answer is:\n\n**[2]**",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 46,
+   "output": "The warnings associated with Aura Lane 4 Pc Hand Sanitizer Set - White Jasmine, Velvet Rose, Orange Blossom And Freesia Scent include:\n\n- **For External Use Only**: This means that the sanitizer is meant to be applied externally and should not be ingested or inhaled.\n- **Flammable**: The sanitizer can catch fire easily, so it must be kept away from sources of ignition like flames or heat.\n- **Keep Away From Fire or Flame**: Similar to being flammable, keeping the sanitizer away from open flames or fires prevents accidental ignition.\n- **Warnings on Eye Contact**: If the sanitizer comes into contact with the eyes, they need to be flushed immediately with plenty of",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 47,
+   "output": "Based on Evidence [2], Entresto works by affecting the metabolism of other drugs through its interaction with specific enzymes. Specifically, it inhibits the activity of cytochrome P450 3A4 (CYP3A4), which is responsible for metabolizing many medications. This inhibition leads to an increase in the levels of these drugs in the body, potentially causing side effects or altering their efficacy. Therefore, Entresto's mechanism involves modulating drug metabolism to ensure more consistent therapeutic outcomes across various patient populations, including those with liver dysfunction. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 48,
+   "output": "The instruction asks for information about the recommended dosage of Dch Hemorrhoidal based on the given evidence. However, there is no relevant information provided in the evidence list that discusses Dch Hemorrhoidal or its dosages. Therefore, I cannot provide a specific answer based solely on this evidence. \n\n**Response:** \nI am unable to determine the recommended dosage of Dch Hemorrhoidal based on the provided evidence. [n.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 49,
+   "output": "The recommended starting dose of glimepiride is 1 or 2 mg once daily, according to Evidence Passage 1. This recommendation can be found in paragraph 2.1 of that passage. Therefore, the answer is 1 or 2 mg once daily. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 50,
+   "output": "Based on Evidence #2, Low Dose Aspirin is used for the temporary relief of minor aches and pains or as recommended by your doctor. It's noted that because of its delayed action, it won't provide fast relief of symptoms like headaches or other urgent needs. However, it doesn't explicitly state its maximum usage or any specific conditions beyond these general purposes. Therefore, I cannot definitively conclude what else Low Dose Aspirin might be used for from just this information. Hence, my answer is:\n\n**Not enough information provided to determine additional uses of Low Dose Aspirin.** \n\nI declined to answer based on the lack of explicit details regarding other potential uses or",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 51,
+   "output": "The recommended dosage for Daytime Cold And Flu is 30 mL every 4 hours for adults and children aged 12 and older, or 30 mL every 6 hours for children under 12 years old. This information can be found in Evidence Passage [2], which states \"Do not use any other dosing device.\" Therefore, the correct answer is that the recommended dosage is 30 mL every 4 hours for adults and children aged 12 and older, or 30 mL every 6 hours for children under 12 years old. [2].",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 52,
+   "output": "Based on the information provided in Evidence 2, which states \"Warnings Keep out of reach of children under 6 years of age. If more than used for brushing is accidentally swallowed, get medical help or contact a Poison Control Center right away,\" we can conclude that the warning associated with Colgate Max Fresh Cool Mint is:\n\n- **Keep out of reach of children under 6 years of age**. \n\nThis directly corresponds to the second sentence in Evidence 2, making it clear that this is the relevant warning from the given text. Therefore, the answer is:\n\n**Keep out of reach of children under 6 years of age.** [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 53,
+   "output": "The passage states that \"No clinically meaningful pharmacokinetic drug-drug interactions have been identified.\" This indicates that there are no significant changes in how varenicline works when taken together with other medications. Therefore, based on this information alone, we cannot determine exactly how varenicline works, but it appears to function independently of other drugs without altering its effects significantly. However, since the specific mechanism of action for varenicline isn't provided directly in the given evidence, I can only conclude from the available data that there are no known clinically relevant interactions affecting its pharmacological properties. Thus, my response is:\n\n**I am unable to provide a definitive answer based solely on the given evidence",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 54,
+   "output": "Based on the information provided in Evidence 1, when Etodolac is used, it should not be given to patients who have had a previous history of depression because mental depression can occur in both those with and without a history of depression. Additionally, there's mention that extrapyramidal symptoms, such as acute dystonic reactions, may occur in about 1 out of every 500 patients taking the medication at typical doses. Therefore, Etodolac should not be prescribed to individuals with a history of depression or any signs of these side effects. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 55,
+   "output": "Based on Evidence 1, Veradex-E is indicated for temporarily relieving minor burns, dry, chapped, fissured and macerated skin and lips, psoriasis, eczema, mild sunburn, abrasions and contusions, diaper dermatitis, hemorrhoids, and prickly heat. Therefore, the answer is that Veradex-E is used for these conditions. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 56,
+   "output": "The adverse reactions of Clopidogrel include headaches, ageusia, psychiatric disorders such as confusion and hallucinations, respiratory, thoracic, and mediastinal disorders like bronchospasm, interstitial pneumonitis, eosinophilic pneumonia, renal and urinary disorders including increased creatinine levels, skin and subcutaneous tissue disorders involving maculopapular, erythematous or exfoliative rashes, urticaria, bullous dermatitis, eczema, toxic epidermal necrolysis, Stevens-Johnson syndrome, acute generalized exanthematous pustulosis (AGEP), angioedema, drug-induced hypersensitivity syndrome,",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 57,
+   "output": "Based on the given evidence, there is no information provided about how Clopidogrel works. Therefore, I cannot answer the question based solely on the available data. [No suitable evidence found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 58,
+   "output": "Based on Evidence 2, the warning associated with Mentholatum Pain Relieving is:\n\n\"For external use only\"\n\nThis information comes directly from the \"Warnings\" section of the given text. There is no mention of any specific warnings related to palonosetron hydrochloride in the provided evidence. Therefore, I cannot provide an answer based solely on the evidence provided. [2]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 59,
+   "output": "The effect of proton pump inhibitors (PPI) on the systemic exposure to the clopidogrel active metabolite following multiple doses of clopidogrel 75 mg evaluated in dedicated drug interaction studies is presented in Figure 1. Pharmacodynamic and pharmacokinetic parameters measured in these studies showed that the interaction was highest with omeprazole and least with dexlansoprazole. Opioids Coadministration of 5 mg intravenous morphine with 600 mg loading dose of clopidogrel in healthy adults decreased the AUC and C max of clopidogrel’s thiol metabolites by 34%. Mean platelet aggregation was h [",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 60,
+   "output": "Based on Evidence #1, Etodolac is used in the treatment of acute coronary syndrome where it is administered with a loading dose followed by maintenance doses of 75 mg per day. However, there is no mention of Etodolac being used for any other purposes in this evidence. Therefore, I cannot determine what else Etodolac is used for based solely on this information. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 61,
+   "output": "Based on Evidence [2], the adverse reaction mentioned for Clopidogrel is \"Gastrointestinal hemorrhage\". This can be seen from the statement: \"Hemorrhagic stroke 0.2 0.2 0.91 Fatal 0.2 0.2 0.81 Other noncerebral bleeding (nonmajor) 3.6 3.1 0.005 Any noncerebral bleeding 3.9 3.4 0.004 CAPRIE (Clopidogrel vs Aspirin)\". Therefore, the adverse reaction of Clopidogrel is gastrointestinal hemorrhage. [2].",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 62,
+   "output": "The recommended dosage of Clopidogrel is **75 mg once daily**. This can be initiated either with a loading dose of 300 mg followed by maintenance doses of 75 mg per day, or without a loading dose if the patient has recently experienced a myocardial infarction, stroke, or peripheral arterial disease. The exact timing of when to start the medication depends on the specific clinical context. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 63,
+   "output": "The warning associated with Etodolac is that it can cause some serious events like death or being very dangerous. These happen when people take certain medicines called NSAIDs. The most common problems start with a high temperature, a red skin all over your body, swollen glands, and sometimes trouble breathing. There might also be liver or kidney problems, blood changes, heart inflammation, muscle pain, or joint pain. Sometimes, these signs look like having a bad cold or flu. But remember, if you ever feel sick after taking Etodolac, tell a doctor right away because they know what to do. [n. 1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 64,
+   "output": "Based on Evidence 1, the warnings associated with Medline include:\n\n- External use only\n- Not to be used on deep or puncture wounds, animal bites, or serious burns\n- Avoid getting into eyes\n- Stop use if condition worsens or persists beyond 7 days\n- Keep out of reach of children\n- Seek medical help if ingested\n- Follow dosing instructions; do not exceed recommended amounts without a doctor's guidance\n- Limit usage to no more than 6 doses per day for adults and children over 12 years old\n- Use for no longer than 10 days without a doctor's direction\n\nThese warnings are provided to ensure safe and effective use",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 65,
+   "output": "The mechanism of action for Entresto involves two components: a neprilysin inhibitor, sacubitril, and an angiotensin receptor blocker, valsartan. Specifically, it works by:\n\n1. Inhibiting neprilysin (neutral endopeptidase; NEP) through its active metabolite, LBQ657.\n2. Blocking the angiotensin II type-1 (AT1) receptor with valsartan.\n\nThese actions lead to increased levels of peptides that are degraded by neprilysin, including natriuretic peptides, which can result in beneficial cardiovascular and renal effects in heart failure patients. Therefore,",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 66,
+   "output": "The warnings associated with Ps-2205 Bzk Antiseptic Towelettes include:\n\n- **For External Use Only**: This means the product is intended for cleaning surfaces and skin, not for internal use.\n- **Do not use**:\n  - **As an antiseptic for more than 1 week**\n  - **In the eyes**\n- **Ask a doctor before use if**:\n  - **You have deep or puncture wounds**, \n  - **Animal bites**, \n  - **Serious burns**\n\nThese warnings highlight specific precautions regarding usage duration, location, and conditions where external application might pose risks. The instructions emphasize the importance of seeking professional advice when dealing",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 67,
+   "output": "The recommended dosage of Doxorubicin Hydrochloride is given in its injection form, typically administered via intravenous route. The instructions state that it should be \"Administered diluted Doxorubicin Hydrochloride Injection as an intravenous injection through a central intravenous line.\" Therefore, the correct dosage recommendation is:\n\n**Intravenous Injection**\n\nThis corresponds to option **(B)** in the provided choices. \n\nNote: There was a slight error in my initial response where I incorrectly stated the dosage as \"intramuscular\" instead of \"intravenous,\" but this has now been corrected based on the information provided in the instruction.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 68,
+   "output": "Based on the given evidence, there is no information provided about adverse reactions of Palonosetron Hydrochloride. Therefore, I cannot provide a response based solely on this evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 69,
+   "output": "The recommended dosage of Entresto is not explicitly stated in the given evidence. Therefore, I cannot provide an accurate dosage based on the information provided. [0]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    0
+   ],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 70,
+   "output": "The Medline product is used to protect minor cuts, scrapes, and burns, help prevent and temporarily protect and relieve chapped or cracked skin, and treat and prevent diaper rash. It also helps protect minor skin irritation associated with diaper rash and seals out wetness. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 71,
+   "output": "Based on Evidence 1, Maxalt works by increasing the levels of rizatriptan in the body through its administration at a dose of 10 mg when taken concurrently with the selective, reversible MAO-A inhibitor, moclobemide. This increase leads to higher concentrations of rizatriptan's active metabolites, which can potentially enhance its therapeutic effects. Additionally, it mentions that this interaction could be more pronounced with irreversible MAO inhibitors compared to selective ones like moclobemide. Therefore, Maxalt likely functions by enhancing the bioavailability and efficacy of rizatriptan through these mechanisms. However, no specific information about how Maxalt itself works directly is provided in",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 72,
+   "output": "Based on Evidence #2, when Trazodone Hydrochloride is used concomitantly with Monoamine Oxidase Inhibitors (MAOIs), it is contraindicated due to an increased risk of Serotonin Syndrome. Therefore, Trazodone Hydrochloride should not be used concurrently with MAOIs. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 73,
+   "output": "Based on evidence [2], the adverse reactions of Trazodone Hydrochloride include:\n\n- Edema\n- Blurred vision\n- Syncope\n- Drowsiness\n- Fatigue\n- Diarrhea\n- Nasal congestion\n- Weight loss\n\nThese were identified as the most common adverse reactions with an incidence greater than or equal to 5%, compared to the placebo group. Additionally, it's noted that there have been reports of suicidal thoughts and behavior in children, adolescents, and young adults, which should be reported to the appropriate authorities. However, these specific details about the adverse reactions are not provided in the given evidence. Therefore, I cannot provide a comprehensive list of",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 74,
+   "output": "The recommended dosage of Varenicline is 2.1. Specifically, it states that \"Start varenicline tablets dosing one week before the date set by the patient to stop smoking\" or \"Alternatively, the patient can begin varenicline tablets dosing and then quit smoking between days 8 and 35 of treatment.\" The document also mentions that \"Consider a gradual approach to quitting smoking with varenicline,\" which implies that there are multiple dosing options available depending on when the patient decides to start taking the medication. However, the primary recommendation given is to use a starting dose of 0.5 mg once daily on days 1 to 3 and",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 75,
+   "output": "Based on Evidence #1, metoclopramide should not be used when stimulation of gastrointestinal motility might be dangerous, such as in cases of gastrointestinal hemorrhage, mechanical obstruction, or perforation. Therefore, the correct answer is:\n\n**Gastrointestinal hemorrhage, mechanical obstruction, or perforation** [1].",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 76,
+   "output": "Based on Evidence 2, we can deduce that Metoclopramide works through its linear kinetic processes, which include:\n\n- **Absorption**: Approximately 85% of the radioactivity of an orally administered dose appears in the urine within 72 hours.\n- **Elimination**: About half of the metabolites are excreted in the form of free or conjugated metoclopramide.\n- **Half-Life**: The average elimination half-life in individuals with normal renal function is approximately 5 to 6 hours.\n\nTherefore, Metoclopramide primarily functions by being absorbed into the bloodstream, distributed throughout the body, and then eliminated over a period of about 5",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 77,
+   "output": "Based on Evidence #1, Palonosetron Hydrochloride increases its plasma concentration by about 110% from day 1 to day 3 when administered via intravenous route. This indicates that it likely works by increasing blood levels rapidly after administration. However, this information alone doesn't directly address how Palonosetron Hydrochloride specifically works. \n\nThe provided evidence does not explicitly state how Palonosetron Hydrochloride works but rather describes its pharmacokinetics and some side effects. Therefore, I cannot definitively conclude how Palonosetron Hydrochloride works based solely on the given evidence. Thus, my response is:\n\nI am unable to determine",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 78,
+   "output": "The information provided in Evidence 1 is about ketorolac tromethamine's pharmacokinetics, including its average plasma concentration over time and volume of distribution. It does not provide details on how it works. Therefore, I cannot determine how ketorolac tromethamine works based solely on this evidence. [n]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 79,
+   "output": "The recommended dosage of Tranexamic Acid is 10 mg/kg actual body weight intravenously administered as a single-dose, immediately before tooth extractions. Infuse no more than 1 mL/min. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 80,
+   "output": "Based on Evidence #1, palonosetron hydrochloride injection is administered intravenously on day 1 and then orally for 3 days at an aprepitant dosage of 125 mg/80 mg/80 mg. The pharmacokinetics of palonosetron do not show any significant alterations in its absorption or peak concentration compared to when it's taken orally alone. This suggests that palonosetron works by being absorbed into the bloodstream through the IV route rather than just being taken orally, which could potentially provide more consistent levels of medication throughout the course of treatment. However, this information doesn't directly address how palonosetron specifically works",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 81,
+   "output": "Based on Evidence #1, the adverse reactions of Etodolac include:\n\n- Ymosis\n- Anemia\n- Thrombocytopenia\n- Bleeding time increased\n- Agranulocytosis\n- Hemolytic anemia\n- Aplastic anemia\n- Leukopenia\n- Neutropenia\n- Pancytopenia\n\nThese effects can occur due to its metabolism and interactions within the body. Therefore, the adverse reactions of Etodolac are listed above. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 82,
+   "output": "The warnings associated with Etodolac are:\n\n- **GI Ulceration and Bleeding**: Patients should be alert for signs and symptoms of GI ulceration and bleeding during NSAID therapy.\n- **Serious GI Adverse Events**: Promptly initiate additional evaluation and treatment if a serious GI adverse event is suspected.\n- **Renal Toxicity**: Long-term administration of NSAIDs can result in renal papillary necrosis and other renal injuries.\n- **Risk Considerations**: For high-risk patients, alternative therapies that do not involve NSAIDs should be considered due to potential renal effects. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 83,
+   "output": "Based on the given evidence, there is no information provided about the recommended dosage of Bacitracin. Therefore, I am unable to provide an answer based solely on this evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 84,
+   "output": "The recommended dosage of Extra Strength Pain Relief is 2 caplets every 6 hours while symptoms last, and it should not be taken more than 6 caplets in 24 hours unless directed by a doctor. This information can be found in Evidence Passage 2. Therefore, the answer is 2 caplets every 6 hours. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 85,
+   "output": "Based on the provided evidence, there is no mention of adverse reactions associated with Clopidogrel. Therefore, I cannot provide any information about its adverse reactions based solely on the given evidence. [No suitable evidence found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 86,
+   "output": "Based on Evidence #1, the clinically significant adverse reactions that appear in other sections of the labeling for Entresto include:\n\n- Angioedema\n- Hypotension\n- Impaired Renal Function\n- Hyperkalemia\n\nThese reactions occur when they appear in other sections of the labeling. Therefore, the adverse reactions of Entresto are:\n\nAngioedema, Hypotension, Impaired Renal Function, Hyperkalemia. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 87,
+   "output": "The adverse reactions of Doxorubicin Hydrochloride include:\n\n- Cardiomyopathy and Arrhythmias [see Warnings and Precautions (5.1) ]\n- Secondary Malignancies [see Warnings and Precautions (5.2) ]\n- Extravasation and Tissue Necrosis [see Warnings and Precautions (5.3) ]\n- Severe Myelosuppression [see Warnings and Precautions (5.4) ]\n- Tumor Lysis Syndrome [see Warnings and Precautions (5.6) ]\n- Radiation Sensitization and Radiation Recall [see Warnings and Precautions (5.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 88,
+   "output": "Based on Evidence #1, the adverse reactions for Glimepiride mentioned are:\n\n- Hypoglycemia\n- Dizziness\n- Asthenia\n- Headache\n- Nausea\n\nThese reactions are listed under \"Adverse Reactions\" section where it states \"The following serious adverse reactions are discussed in more detail below and elsewhere in the labeling\". Therefore, these are the specific adverse reactions reported by the manufacturer regarding Glimepiride. [n=1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 89,
+   "output": "Based on Evidence 1, which states \"Warnings For external use only Do not use on deep or puncture wounds animal bites serious burns When using this product do not get into eyes Stop use and ask a doctor if condition worsens symptoms last for more than 7 days or clear up and occur again within a few days Keep out of reach of children. In case of accidental ingestion, get medical help or contact a Poison Control Center right away.\", we can infer that Glimepiride is an external medication and should be avoided in certain conditions such as deep or puncture wounds, animal bites, serious burns, getting into the eyes, causing severe reactions, or lasting longer than 7 days without",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 90,
+   "output": "The information provided does not mention any specific dosage recommendations for Ketorolac Tromethamine. Therefore, I am unable to provide an answer based solely on the given evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 91,
+   "output": "The given evidence does not provide information about how Metoclopramide works. Therefore, I cannot answer the question based on this evidence. [n.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 92,
+   "output": "The recommended starting dose of Trazodone Hydrochloride is 150 mg in divided doses daily. This dose may be increased by 50 mg per day every three to four days up to a maximum of 400 mg per day in divided doses. Therefore, the correct answer is [1].",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 93,
+   "output": "The information provided in the evidence does not mention any specific dosages for Doxorubicin Hydrochloride. Therefore, I am unable to provide a recommendation based solely on the given text. [No suitable response found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 94,
+   "output": "Based on the given evidence, there is no mention of any warnings associated with Ketorolac Tromethamine. Therefore, I cannot provide an answer based solely on the provided information. [n/A]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 95,
+   "output": "Based on the information provided in Evidence 2, Ketorolac Tromethamine works by being administered via the intramuscular route in pediatric patients. Additionally, it has been noted that there are significant differences in its pharmacokinetic properties depending on factors such as renal function and age, including an increase in the AUC∞ of each enantiomer in patients with renal disease. However, the primary mechanism described in Evidence 1 regarding its use for temporary relief of various symptoms associated with colds and flu is not directly related to how it works but rather what it can do once it's taken. Therefore, I cannot definitively state how Ketorolac Tromethamine specifically \"works\"",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 96,
+   "output": "Based on the given evidence, there is no mention of any warnings related to DCH Hemorrhoidal. Therefore, I cannot provide a warning based solely on the provided information. [No Warning]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 97,
+   "output": "Based on the provided evidence, there is no mention of any adverse reactions associated with Calcium Acetate. Therefore, I am unable to provide an answer based solely on this information. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 98,
+   "output": "Based on Evidence 1, it states:\n\n\"the cytotoxic effect of doxorubicin hydrochloride on malignant cells and its toxic effects on various organs are thought to be related to nucleotide base intercalation and cell membrane lipid binding activities of doxorubicin.\"\n\nThis indicates that Doxorubicin Hydrochloride works by causing damage to the DNA and RNA of cancerous cells through nucleotide base intercalation and cell membrane lipid binding activities. Therefore, the correct response is:\n\n**Nucleotide base intercalation and cell membrane lipid binding activities.** [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 99,
+   "output": "The recommended dosage of Entresto is 97 mg/103 mg orally twice daily. This information can be found in Evidence Passage 2, specifically in section 2.2 which states \"The recommended starting dosage for adults is 49 mg/51 mg orally twice daily.\" Therefore, the correct answer is 97 mg/103 mg. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 100,
+   "output": "The mechanism of action of etodolac, like that of other NSAIDs, is not completely understood, but may be related to the prostaglandin synthetase inhibition. Etodolac is a racemic mixture of [-]R- and [+]S-etodolac. As with other NSAIDs, it has been demonstrated in animals that the [+]S-form is biologically active. Both enantiomers are stable and there is no [-]R to [+]S conversion in vivo. Therefore, the response is Etodolac works by inhibiting prostaglandin synthetase. [2].",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 101,
+   "output": "The instruction asks for information from the given evidence based on the question \"When should Metoclopramide not be used?\" However, the input contains questions about Etodolac's usage rather than Metoclopramide. Therefore, I cannot provide an answer directly from the evidence provided. \n\n**Response:** \nI am unable to answer this question because the evidence does not contain information about Metoclopramide or its contraindications. [n]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 102,
+   "output": "The mechanism of action for Clopidogrel involves its extensive metabolism through two primary pathways: one mediated by esterase enzymes resulting in hydrolysis into an inactive carboxylic acid derivative, accounting for approximately 85% of circulating metabolites; and another pathway involving multiple cytochrome P450 enzymes which lead to further oxidation of the drug to form a 2-oxo-clopidogrel intermediate metabolite. These processes contribute to the overall pharmacological effects of Clopidogrel, including platelet inhibition and potential reduction in thrombotic events. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 103,
+   "output": "Based on the given evidence, there is no information provided about the adverse reactions of Maxalt. Therefore, I cannot provide an answer based solely on the available data. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 104,
+   "output": "The warning associated with Ketorolac Tromethamine is:\n\n\"Until data from such studies are available, physicians should carefully weigh the benefits against the risks, and use such concomitant therapy in these patients only extremely cautiously.\"\n\nThis can be found in Evidence Passage [2], which states \"00-5000 units q12h), warfarin and dextrans have not been studied extensively, but may also be associated with an increased risk of bleeding. Until data from such studies are available, physicians should carefully weigh the benefits against the risks, and use such concomitant therapy in these patients only extremely cautiously.\" This passage indicates that until further research is conducted, caution must",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 105,
+   "output": "The recommended dosage of Mentholatum Pain Relieving is applied to the affected area not more than 3 to 4 times daily. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 106,
+   "output": "Based on the given evidence, there is no information provided about how varenicline works. Therefore, I cannot answer the question based solely on this evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 107,
+   "output": "Based on Evidence 2, which states \"For external use only\", we can conclude that one warning associated with Foster & Thrive Original Formula Eye Drops is that they should be used externally only. Therefore, the answer is:\n\n**For external use only** [2].",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 108,
+   "output": "The information provided does not mention a specific product called \"Triple Prep Spf 40\" or any dosages related to it. Therefore, I cannot provide an answer based solely on this evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 109,
+   "output": "Based on Evidence 1, Ketorolac Tromethamine is contraindicated in patients with previously demonstrated hypersensitivity to ketorolac tromethamine, active peptic ulcer disease, recent gastrointestinal bleeding or perforation, and a history of peptic ulcer disease or gastrointestinal bleeding. Therefore, Ketorolac Tromethamine should not be used when these conditions are present. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 110,
+   "output": "The warnings associated with Daytime Cold And Flu include:\n\n- **Liver Warning:** \"This product contains acetaminophen. Severe liver damage may occur if you take: more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen 3 or more alcoholic drinks every day while using this product.\"\n  \n- **Allergy Alert:** \"Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening, blisters, rash.\"\n\nThese warnings highlight potential risks related to liver function and skin reactions when using the medication. [1] [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 111,
+   "output": "Based on the information provided in Evidence 1, Entresto is contraindicated in patients who have had anaphylaxis to either the active ingredient or any other component of the product. Therefore, the correct answer is:\n\n**[1]** [n=1]\n\nEntresto should not be used in patients who have had anaphylaxis to either the active ingredient or any other component of the product. [See Contraindications (4.1)]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 112,
+   "output": "Based on the provided evidence, there is no mention of adverse reactions associated with Etodolac. Therefore, I am unable to provide an answer based solely on the given information. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 113,
+   "output": "Based on Evidence 1, Palonosetron Hydrochloride works by:\n\n- Binding with high affinity and selectivity at α4β2 neuronal nicotinic acetylcholine receptors.\n- Producing agonist activity when bound to these receptors.\n- Preventing nicotine from binding to these receptors. \n\nTherefore, the mechanism of action described in Evidence 1 matches the description provided about how Palonosetron Hydrochloride works. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 114,
+   "output": "The adverse reactions of Varenicline include:\n\n- **Epidermal and Dermal Conditions**: Rash (ranging from mild to severe), Pruritis.\n- **Metabolism and Nutritional**: Appetite/General Nutrition Disorders, such as increased appetite (reported in 40% of patients treated with varenicline 1 mg twice daily in a one-year study) and decreased appetite/anorexia (reported in 20% of patients).\n\nThese reactions are detailed in Evidence Passage [2], specifically under \"Adverse Reactions\" section. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 115,
+   "output": "The adverse reaction of Palonosetron Hydrochloride is that it is contraindicated in patients who have a history of angioedema related to previous ACE inhibitor or ARB therapy. Additionally, it is contraindicated when used concurrently with ACE inhibitors or aliskiren in patients with diabetes. Furthermore, there is no information provided about specific adverse reactions associated with Palonosetron Hydrochloride itself. Therefore, I cannot provide a list of all adverse reactions without additional research. [1]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 116,
+   "output": "Based on the information provided in Evidence 1, Tranexamic Acid is contraindicated in patients with known or suspected coronary artery disease because it may increase the risk of myocardial infarction. Therefore, when should Tranexamic Acid not be used? It should not be used in patients with known or suspected coronary artery disease. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 117,
+   "output": "The adverse reactions of Trazodone Hydrochloride include:\n\n- **Nervous System Disorders:** Aphasia, ataxia, cerebrovascular accident, extrapyramidal symptoms, grand mal seizures, paresthesia, tardive dyskinesia, vertigo.\n- **Psychiatric Disorders:** Abnormal dreams, agitation, anxiety, hallucinations, insomnia, paranoia, psychosis, stupor.\n- **Renal and Urinary Disorders:** Urinary incontinence, urinary retention.\n- **Reproductive System and Breast Disorders:** Breast enlargement or engorgement, clitorism, lactation, priapism.\n- **Respiratory, Thoracic, and Medi",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 118,
+   "output": "The recommended dosage of Low Dose Aspirin is to take 4 to 8 tablets every 4 hours, not exceeding 48 tablets in 24 hours unless directed by a doctor. This information is provided in Evidence Passage 2. Therefore, the answer is 4 to 8 tablets every 4 hours. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 119,
+   "output": "Based on the given evidence, there is no information provided about adverse reactions of Varenicline. Therefore, I cannot answer the question based solely on this evidence. [n.] - n/a",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 120,
+   "output": "Based on Evidence #1, palonosetron hydrochloride injection is indicated for preventing nausea and vomiting associated with certain types of chemotherapy and surgeries. Specifically:\n\n- It's indicated for preventing nausea and vomiting associated with initial and repeat courses of moderately emetogenic cancer chemotherapy.\n- It's also indicated for preventing nausea and vomiting associated with initial and repeat courses of highly emetogenic cancer chemotherapy.\n- For PONV after surgery, it can be used up to 24 hours post-surgery but efficacy beyond this period hasn't been demonstrated.\n\nTherefore, the answer is: Palonosetron Hydrochloride is used for prevention of nausea and vomiting associated with initial and repeat courses of",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 121,
+   "output": "The adverse reactions of Palonosetron Hydrochloride include:\n\n1. Headache\n2. Constipation\n3. QT prolongation\n4. Bradycardia\n5. Other symptoms like fever, chills, malaise, fatigue, dizziness, dyspnea, hypotension, tachycardia, chest pain, palpitations, syncope, arrhythmias, and others. These can be serious or cause life-threatening conditions. For more details on these side effects, refer to section 6.1 under \"Adverse Reactions\" in the drug's label. [2]\n\nNote that while the original instruction asked for a specific list of adverse reactions",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 122,
+   "output": "The instruction asks me to provide information from the given evidence based solely on the numbered evidence passages provided. I will select the relevant passage and cite it if needed.\n\nBased on the evidence:\n\n[1] states that ENTRESTO has been studied in specific populations including children under 18 years old who received ENTRESTO at doses ranging from 0.8 mg/kg to 3.1 mg/kg. It mentions that \"Pharmacokinetic data indicated that exposure to ENTRESTO in pediatric and adult patients is similar.\" This suggests that ENTRESTO works similarly across different age groups, but specifically for those under 18 years old.\n\nTherefore, the response is:\n\nENTRESTO works",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 123,
+   "output": "Based on Evidence 1, ketorolac tromethamine is used for pain relief. Therefore, the answer is pain relief. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 124,
+   "output": "The information provided in Evidence 2 does not directly address how Etodolac works. Therefore, I cannot provide a specific answer based on this evidence alone. [2]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 125,
+   "output": "The information provided does not mention how Varenicline works. Therefore, I cannot provide a response based solely on the given evidence. [No]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 126,
+   "output": "Based on Evidence #1, Clopidogrel tablets are contraindicated in patients with active pathological bleeding such as peptic ulcer or intracranial hemorrhage. Therefore, Clopidogrel should not be used when there is active bleeding present. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 127,
+   "output": "The recommended dosage of Varenicline is 1 or 2 mg once daily. This recommendation can be adjusted up to a maximum of 8 mg once daily, but it must be done gradually over time. It's important to start with a lower dose and increase it slowly, typically every one to two weeks. Additionally, it's advised to take the medication with breakfast or the first main meal of the day. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 128,
+   "output": "Based on Evidence 1, the warning associated with Power Stick For Her Roll-On Antiperspirant Deodorant Powder Fresh is:\n\n**Do not use on broken skin.**\n\nThis can be seen in sentence [1], which states \"Warnings For external ues only. Do not use on broken skin.\" This directly addresses the concern about using it on damaged skin. Therefore, the specific warning related to its usage is that it should not be applied to areas where the skin has been injured or irritated. \n\nNo other warnings were provided in the given evidence that pertain specifically to Power Stick For Her Roll-On Antiperspirant Deodorant Powder Fresh. The information provided focuses on general",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 129,
+   "output": "The instruction asks for information from the given evidence that directly answers when Varenicline should not be used. However, the provided evidence does not mention any specific contraindications related to Varenicline use. Therefore, I cannot provide an answer based on this evidence alone. \n\n**Response:** \nI do not have enough information to determine when Varenicline should not be used. [n.]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 130,
+   "output": "The instruction asks me to provide information based on the given evidence without directly answering the question. However, I can infer that the question about how Metoclopramide works might relate to its mechanism of action or side effects, which are not explicitly addressed in the provided evidence. Therefore, my response will reflect this understanding:\n\nI cannot definitively state how Metoclopramide works based solely on the given evidence. The evidence discusses aspirin's potential risks and interactions, but does not address Metoclopramide's mechanisms or side effects. Thus, I must decline to answer the specific question asked. My inability to provide a direct answer stems from the lack of relevant information within the provided evidence regarding",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 131,
+   "output": "The instruction asks me to provide information from the given evidence based on the specific question asked about how Clopidogrel works. However, there is no mention of Clopidogrel or any related medication in the provided evidence. Therefore, I cannot answer the question based solely on the given information. \n\n**Response:** \nI am unable to answer this question as it is not supported by the provided evidence. [No suitable passage found.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 132,
+   "output": "The warnings associated with Botnia Gentle Sun SPF 30 include:\n\n- **For External Use Only**: This means that the product should be applied externally and not ingested.\n- **Do Not Use on Damaged or Broken Skin**: The product is not suitable for areas where the skin has been injured or is open.\n- **When Using This Product Keep Out of Eyes**: It's important to avoid getting the product into your eyes because it could cause irritation.\n- **Rinse With Water to Remove**: In case of accidental eye contact, rinse the affected area thoroughly with water.\n- **Stop Use and Ask a Doctor if Rash or Irritation Develops**: If there is any sign of rash",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 133,
+   "output": "Based on Evidence 1, the warnings associated with Ketorolac Tromethamine include:\n\n- Do not take more than directed.\n- Adults and children 12 years and over should take 2 caplets every 6 hours while symptoms last.\n- Do not take more than 6 caplets in 24 hours, unless directed by a doctor.\n- Children under 12 years should ask a doctor before use.\n- Avoid contact with eyes.\n- Do not exceed recommended dosage unless directed by a doctor.\n- Do not put this product into rectum by using fingers or any mechanical device or applicator.\n- Stop use and ask a doctor if rectal bleeding occurs, condition wors",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 134,
+   "output": "[1]\n\n### Response:\n[Varenicline tablets are indicated for use as an aid to smoking cessation treatment.] [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1,
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 135,
+   "output": "The recommended dosage of Clear Acne Spot Treatment is 1 to 3 times daily. This can be increased to 2 or 3 times daily if necessary or as directed by a doctor. For children under 10 years old, it's advised to use only once a day or every other day, and consultation with a physician should be sought in such cases. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 136,
+   "output": "Based on the information provided in Evidence 1, we know that Etodolac has been associated with an increased risk of serious cardiovascular (CV) thrombotic events, including myocardial infarction (MI) and stroke, which can be fatal. However, this information does not directly address how Entresto works.\n\nTherefore, I cannot definitively state how Entresto works based solely on the given evidence. [No specific passage cited]\n\nThe response declines to answer due to insufficient evidence regarding Entresto's mechanism of action. [n=1]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 137,
+   "output": "The information provided does not include any specific recommendation for the dosage of Etodolac. Therefore, I am unable to provide an answer based on this evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 138,
+   "output": "Based on Evidence 1, the warnings associated with Extra Strength Pain Relief include:\n\n- **Liver Warning:** Severe liver damage may occur if you take more than 4,000 mg of acetaminophen in 24 hours with other drugs containing acetaminophen.\n- **Allergy Alert:** Acetaminophen may cause severe skin reactions. Symptoms may include skin reddening, blisters, rash. If a skin reaction occurs, stop use and seek medical help right away. Do not use with any other drug containing acetaminophen (prescription or nonprescription).\n\nTherefore, the warnings associated with Extra Strength Pain Relief are:\n1. Liver warning\n2",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 139,
+   "output": "Based on Evidence 2, when Betamethasone Dipropionate should not be used is \"Hypersensitivity to any component of this medicine.\" Therefore, the answer is Hypersensitivity to any component of this medicine. [2].",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 140,
+   "output": "Based on the information provided in Evidence 1, the temporary relief of minor aches and pains due to conditions such as the common cold, headache, backache, minor pain from arthritis, toothache, muscular aches, premenstrual and menstrual cramps, and fever is achieved by taking Extra Strength Pain Relief. However, there is no specific mention of a recommended dosage for Palonosetron Hydrochloride in this evidence. Therefore, I cannot provide a recommendation based solely on the given information. [1]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 141,
+   "output": "Based on the given evidence, there is no information provided about glimepiride being used for anything. Therefore, I cannot provide an answer based solely on the evidence provided. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 142,
+   "output": "Based on the given evidence, there is no information provided about warnings associated with \"Leader Earwax Removal Drops\" or any earwax removal aid. Therefore, I cannot provide a warning based solely on the evidence provided. [No Warning Provided]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 143,
+   "output": "The information provided in Evidence 2 does not directly address how Doxorubicin Hydrochloride works. Therefore, I cannot provide an answer based solely on this evidence. [2]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 144,
+   "output": "The mechanism of action for Maxalt involves it binding with high affinity to human cloned 5-HT 1B/1D receptors. This binding occurs primarily on intracranial blood vessels and sensory nerves of the trigeminal system, which likely contributes to its therapeutic effects in treating migraines. Specifically, Maxalt's primary mode of action seems to be through its interaction with these receptors, thereby modulating their activity and potentially reducing pain signals associated with migraines. Therefore, based on the provided information, Maxalt works by targeting and possibly inhibiting the activity of 5-HT 1B/1D receptors, thereby alleviating symptoms related to migraines. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 145,
+   "output": "The given evidence does not provide information about how Ketorolac Tromethamine works. Therefore, I cannot answer the question based on this evidence. [n/A]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 146,
+   "output": "Based on the given evidence, there is no information provided about any specific warnings associated with Bacitracin. Therefore, I am unable to provide a response based solely on this evidence. [No warning]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 147,
+   "output": "Based on the provided evidence, there is no mention of Palonosetron Hydrochloride or its mechanism of action. Therefore, I am unable to provide an answer based solely on the given information. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 148,
+   "output": "Based on the provided evidence, there is no mention of any specific warnings associated with \"Burn Ease, 3.5G\". Therefore, I am unable to provide a warning from the given information. [No Warning Found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 149,
+   "output": "Based on the given evidence, there is no information provided about any specific warnings associated with Foster And Thrive Lubricating Tears Lubricant Eye Drops. Therefore, I cannot provide a warning based on this evidence. [No Warning Found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 150,
+   "output": "The adverse reactions of Betamethasone Dipropionate include stinging in 0.4% of adults and signs of skin atrophy, telangiectasia, bruising, shininess in 10% of pediatric patients. These reactions were reported in clinical trials. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 151,
+   "output": "The instruction asks me to use only the numbered evidence passages to answer the question about what Aura Lane 4 Pc Hand Sanitizer Set - White Jasmine, Velvet Rose, Orange Blossom And Freesia Scent is used for. However, there is no specific information provided in the given evidence that directly addresses this question. The evidence discusses metoclopramide's contraindications but does not mention Aura Lane hand sanitizer. Therefore, I cannot provide an answer based solely on the given evidence. My response is:\n\nI am unable to answer this question based on the provided evidence. [No suitable passage found.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 152,
+   "output": "The passage states that Ketorolac Tromethamine has an S-R enantiomeric ratio which changes over time due to its elimination kinetics. However, it doesn't provide specific information about how Ketorolac Tromethamine works. Therefore, I cannot determine how Ketorolac Tromethamine works based on this evidence alone. [n/a]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 153,
+   "output": "Based on the information provided in Evidence 1, there is no specific mention of when Maxalt should not be used. Therefore, I cannot determine if it's safe or not based solely on this evidence. Hence, my response is:\n\nI am unable to answer the question. [No suitable evidence found.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 154,
+   "output": "The adverse reactions of Maxalt include nausea, neurological symptoms such as dizziness, headache, somnolence, and asthenia/fatigue. These effects occur at frequencies ranging from 2-20%, depending on the specific symptom. The drug's frequency of occurrence was consistent across different patient groups, including those taking other medications like propranolol, oral contraceptives, or analgesics. Additionally, there were no significant differences observed based on age or gender. However, the study did not provide sufficient information to determine if these side effects varied by race. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 155,
+   "output": "The instruction asks me to use only the numbered evidence passages to answer the question \"What is Extra Strength Pain Relief used for?\" based on the given input. However, the provided evidence does not directly address what Extra Strength Pain Relief is used for. Instead, it provides information about its indications and usage but does not specify its intended purpose or function. Therefore, I cannot accurately answer the question based solely on the evidence provided. My response would be:\n\nI am unable to answer this question based on the given evidence. The evidence does not provide specific details about what Extra Strength Pain Relief is used for. \n\n[n] (not applicable) [n] (not applicable) [n] (not applicable)",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 156,
+   "output": "The given evidence does not provide information about the recommended dosage of Botnia Gentle Sun Spf 30. Therefore, I am unable to answer the question based on the provided data. [No suitable evidence found.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 157,
+   "output": "The mechanism of action of Tranexamic Acid involves its ability to bind to lysine receptors on plasminogen, thereby inhibiting the activity of plasmin, which in turn prevents the breakdown of blood clots. This results in the preservation and stabilization of fibrin's matrix structure, effectively reducing the rate of bleeding. Therefore, the correct answer is that Tranexamic Acid works by diminishing the dissolution of hemostatic fibrin through its interaction with plasmin. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 158,
+   "output": "Based on Evidence 2, we can conclude that:\n\n**Children's Delsym Cough Plus Cold Night-Time is used for the acute treatment of cough, cold, and flu symptoms in children aged 6 to 17 years old.**\n\nTherefore, the indication for Children's Delsym Cough Plus Cold Night-Time is **acute treatment of cough, cold, and flu symptoms**. [2]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 159,
+   "output": "The adverse reactions of Ketorolac Tromethamine include:\n\n- **Gastrointestinal ulcers**\n- **Bleeding**\n- **Perforation**\n- **Postoperative bleeding**\n- **Acute renal failure**\n- **Anaphylactic and anaphylactoid reactions**\n- **Liver failure** [2]\n\nThese reactions can be serious in certain patients who use the medication improperly. [2] [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2,
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 160,
+   "output": "The adverse reactions of Tranexamic Acid are listed in Evidence Passage 1 under \"Adverse Reactions.\" According to this passage, some of the most common adverse reactions include nausea, vomiting, diarrhea, allergic dermatitis, dizziness, hypotension, and thromboembolic events. Therefore, the adverse reactions of Tranexamic Acid are:\n\n- Nausea\n- Vomiting\n- Diarrhea\n- Allergic Dermatitis\n- Giddiness\n- Hypotension\n- Thromboembolic Events\n\nThese reactions are mentioned in the context of a clinical trial where tranexamic acid is being studied for its effects on blood clotting and other conditions.",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 161,
+   "output": "Based on the given evidence, there is no mention of \"Allergy Relief\" or any allergy-related information. Therefore, I cannot provide a specific answer based solely on this evidence. [No suitable response found]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 162,
+   "output": "The recommended dosage of Metoclopramide is 10-15 mg orally up to 4 times daily, depending on the patient's symptoms and clinical response. This can be adjusted to 20 mg if symptoms are intermittent or occur at specific times of the day. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 163,
+   "output": "Based on Evidence 1, Trazodone Hydrochloride is used for treating depression and anxiety disorders. Therefore, the response is:\n\nTrazodone Hydrochloride is used for treating depression and anxiety disorders. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 164,
+   "output": "The recommended dosage of Aura Lane 4 Pc Hand Sanitizer Set - White Jasmine, Velvet Rose, Orange Blossom And Freesia Scent is to spray it in your palm and rub hands together until they are dry. It is not recommended for infants. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 165,
+   "output": "Based on Evidence #1, we can see that the adverse reactions associated with Glimepiride include:\n\n- At least one symptom that the investigator believed might be related to hypoglycemia.\n- A concurrent glucose measurement was not required.\n- These events were self-treated.\n- For doses ranging from 1 mg to 8 mg, the incidence rates were 4%, 17%, 16%, and 0% respectively.\n- The study involved a randomized, double-blind, placebo-controlled monotherapy trial where patients started with either 1 mg glimepiride tablets or placebo daily, then titrated to a target fasting plasma glucose of 90 to 150",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 166,
+   "output": "Based on Evidence #1, the warning associated with Ketorolac Tromethamine is that it can impair the response to thiazides or loop diuretics when taken with NSAIDs like ketorolac tromethamine. Additionally, blood pressure should be closely monitored during the initiation of NSAID treatment and throughout the course of therapy due to potential side effects such as heart failure and edema. Therefore, the warnings associated with Ketorolac Tromethamine include:\n\n1. Impaired response to thiazides or loop diuretics.\n2. Monitoring of blood pressure during NSAID treatment. \n\nThese warnings highlight the importance of careful consideration before prescribing this medication, especially in patients who",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 167,
+   "output": "The recommended dosage of Foster And Thrive Castor Oil is 1 to 4 tablespoonfuls in a single daily dose or as directed by a doctor. This can be adjusted based on the child's weight and age, with children over 12 years old receiving 1 to 4 tablespoons per day, those between 2 and 12 years old receiving 1 to 3 tablespoons per day, and infants under 2 years old requiring consultation from a doctor before use. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 168,
+   "output": "The recommended dosage of Calcium Acetate is 2 capsules with each meal. This recommendation can be found in Evidence Passage [2], specifically under the section \"DOSAGE AND ADMINISTRATION\". The passage states that the starting dose is 2 capsules with each meal and notes that most patients require 3-4 capsules with each meal. Therefore, the correct answer is:\n\n**2 capsules with each meal.** [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 169,
+   "output": "Based on evidence [2], the adverse reactions of Varenicline include:\n\n- **Nervous System Disorders:** Disturbance in attention, dizziness\n- **Psychiatric Disorders:** Dissociation, libido decreased, mood swings\n\nThese reactions are listed for both nervous system disorders and psychiatric disorders separately. Therefore, the complete list of adverse reactions is:\n\n**Nervous System Disorders:** Disturbance in attention, dizziness\n**Psychiatric Disorders:** Dissociation, libido decreased, mood swings\n\nThe information provided does not mention any specific adverse reaction related to sun protection or skin cancer prevention. Thus, I cannot provide additional relevant information based solely on this evidence. [2]",
+   "abstained": true,
+   "should_abstain": false,
+   "citations": [
+    2,
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 170,
+   "output": "Based on the provided evidence, there is no specific information about the recommended dosage of \"Leader Earwax Removal Drops Earwax Removal Aid\". The relevant passage only mentions that it is an earwax removal aid but does not provide details on its dosing instructions. Therefore, I cannot determine the correct dosage based solely on this evidence. [n/A]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 171,
+   "output": "Based on the given evidence, there is no information provided about adverse reactions of Doxorubicin Hydrochloride. Therefore, I cannot provide an answer based solely on the available data. [No suitable evidence found.]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 172,
+   "output": "The warnings associated with Childrens Delsym Cough Plus Cold Night Time are:\n\n1. **Liver Warning**: \"Severe liver damage may occur if your child takes: more than 5 doses in 24 hours, which is the maximum daily amount with other drugs containing acetaminophen.\"\n2. **Allergy Alert**: \"Acetaminophen may cause severe skin reactions. Symptoms may include: skin reddening, blisters, rash.\"\n3. **Sore Throat Warning**: \"If sore throat is severe, persists for more than 2 days, is accompanied or followed by fever, headache, rash, nausea, or vomiting, consult a doctor promptly.\" [2",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": false,
+   "has_disclaimer": false
+  },
+  {
+   "index": 173,
+   "output": "Based on Evidence 1, there is no information provided about Calcium Acetate being used for anything specific. Therefore, I cannot determine what Calcium Acetate is used for based solely on the given evidence. [No]",
+   "abstained": true,
+   "should_abstain": true,
+   "citations": [],
+   "citations_all_valid": false,
+   "cited_gold": null,
+   "has_disclaimer": false
+  },
+  {
+   "index": 174,
+   "output": "The adverse reactions of Varenicline include:\n\n- Neuropsychiatric Adverse Events including Suicidality\n- Seizures\n- Interaction with Alcohol\n- Accidental Injury\n- Cardiovascular Events\n- Somnambulism\n- Angioedema and Hypersensitivity Reactions\n\nThese reactions are detailed in the \"Adverse Reactions\" section of the Varenicline label. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 175,
+   "output": "Based on evidence [2], the adverse reactions of Trazodone Hydrochloride include:\n\n- **Fatigue**: 11%\n- **Headache**: 10%\n- **Nervousness**: 15%\n- **Gastrointestinal**: Abdominal/Gastric Disorder: 4%\n- **Diarrhea**: 1%\n- **Nausea/Vomiting**: 10%\n- **Musculoskeletal**: Aches/Pains: 6%\n- **Neurological**: Incoordination: 5%\n- **Other**: Eyes: Red/Tired/Itching: 3%, Nasal/Sinus Congestion: 3%\n\n",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 176,
+   "output": "The adverse reactions of Metoclopramide include restlessness, drowsiness, fatigue, and lassitude occurring in approximately 10% of patients receiving the most commonly prescribed dosage of 10 mg four times daily. Additionally, insomnia, headaches, confusion, dizziness, or mental depression with suicidal ideation may occur less frequently. The incidence of drowsiness is generally higher compared to other CNS effects. [1]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 177,
+   "output": "The warnings associated with Etodolac include:\n\n1. It can impair the effectiveness of loop diuretics.\n2. It should be used cautiously in patients with hypertension.\n3. Blood pressure should be closely monitored during its use.\n4. There's a risk of increased hospitalizations for heart failure, particularly in those treated with COX-2 selective drugs or non-selective NSAIDs. [2]",
+   "abstained": false,
+   "should_abstain": false,
+   "citations": [
+    2
+   ],
+   "citations_all_valid": true,
+   "cited_gold": true,
+   "has_disclaimer": false
+  },
+  {
+   "index": 178,
+   "output": "Based on Evidence 1, Entresto is used for treating heart failure by inhibiting the enzyme neprilysin, which helps reduce levels of other proteins in the body that can cause fluid buildup. Therefore, the correct answer is:\n\nEntresto is used for treating heart failure by inhibiting the enzyme neprilysin, which helps reduce levels of other proteins in the body that can cause fluid buildup. [1]",
+   "abstained": false,
+   "should_abstain": true,
+   "citations": [
+    1
+   ],
+   "citations_all_valid": true,
+   "cited_gold": null,
+   "has_disclaimer": false
+  }
+ ]
+}

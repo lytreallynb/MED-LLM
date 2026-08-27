@@ -8,9 +8,10 @@ pyarrow==17.0.0
 faiss-cpu==1.8.0.post1
 torch==2.4.1
 
-sentence-transformers==2.5.1
-transformers==4.44.0
-tokenizers==0.19.1
+# Qwen3-Embedding requires transformers >= 4.51
+sentence-transformers>=3.0
+transformers>=4.51,<5
+tokenizers>=0.21
 
 chromadb==0.5.4
 

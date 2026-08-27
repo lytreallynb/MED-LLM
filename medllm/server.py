@@ -47,7 +47,7 @@ def _build_engine() -> RagQueryEngine:
     metadata_path = Path(os.getenv("MEDLLM_META_PATH", "data/clean/fda_meta.jsonl"))
     top_k = int(os.getenv("MEDLLM_TOP_K", "4"))
     hallucination_threshold = float(os.getenv("MEDLLM_FACT_THRESHOLD", "0.35"))
-    embed_model = os.getenv("MEDLLM_EMBED_MODEL", "Qwen/Qwen2.5-Embedding-1.8B")
+    embed_model = os.getenv("MEDLLM_EMBED_MODEL", "Qwen/Qwen3-Embedding-0.6B")
     device = os.getenv("MEDLLM_DEVICE")
     retrieval_cfg = RetrievalConfig(index_path=index_path, metadata_path=metadata_path, top_k=top_k, prompt_template=PROMPT_TEMPLATE)
     embed_cfg = EmbeddingModelConfig(model_name=embed_model, device=device)

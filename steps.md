@@ -28,7 +28,7 @@
 
 1. Use a Qwen embedding model such as:
 
-   * Qwen2.5-Embedding-1.8B
+   * Qwen3-Embedding-0.6B
    * Qwen2.5-Embedding-7B
 2. For each chunk, generate a dense vector embedding.
 3. Save embeddings and metadata.
